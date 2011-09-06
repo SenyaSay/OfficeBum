@@ -1,0 +1,10 @@
+<% @products.each_with_index do |product, index| %>
+    <ul>
+      <h2><%= "Number of product #{index}" %></h2>
+      <li><%= product.caption %></li>
+      <li><%= product.description %></li>
+      <li><%= product.tech_description %></li>
+      <li><%= product.price %></li>
+      <li><%= product.category.name %></li>
+    </ul>
+<% end %>

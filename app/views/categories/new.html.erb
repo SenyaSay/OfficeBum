@@ -1,0 +1,16 @@
+<% form_for @category do |f| %>
+    <h3><%= flash[:error] %></h3>
+
+    <p>
+      <%= f.label :name %><br/>
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label :parent_id %><br/>
+      <%= f.select(:parent_id, Category.all.map{|c| [c.name, c.id]}, :include_blank => true) %>
+    </p>
+
+    <p>
+      <%= f.submit 'Submit' %>
+    </p>
+<% end %>
