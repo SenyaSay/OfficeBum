@@ -7,7 +7,7 @@
     </p>
     <p>
       <%= f.label :parent_id %><br/>
-      <%= f.select(:parent_id, Category.all.map{|c| [c.name, c.id]}, :include_blank => true) %>
+      <%= f.select(:parent_id, nested_set_options(Category, @category) {|i| "#{'-' * i.level} #{i.name}" }) %>
     </p>
 
     <p>

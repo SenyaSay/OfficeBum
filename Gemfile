@@ -7,7 +7,9 @@ gem 'rails', '3.0.4'
 
 gem 'mysql2', '0.2.6'
 
-gem 'ancestry', '1.2.4'
+gem 'awesome_nested_set', '2.0.2'
+
+gem 'paperclip', '~> 2.4'
 
 # Use unicorn as the web server
 # gem 'unicorn'

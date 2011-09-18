@@ -1,5 +1,5 @@
 class Category < ActiveRecord::Base
-  has_ancestry
+  acts_as_nested_set
   has_many :products
 
   validates_presence_of :name

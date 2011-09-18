@@ -10,27 +10,33 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110906181401) do
+ActiveRecord::Schema.define(:version => 20110918145642) do
 
   create_table "categories", :force => true do |t|
     t.string   "name",       :null => false
-    t.string   "ancestry"
+    t.integer  "parent_id"
+    t.integer  "lft"
+    t.integer  "rgt"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "products", :force => true do |t|
-    t.string   "caption",                                                             :null => false
+    t.string   "caption",                                                                :null => false
     t.text     "description"
     t.text     "tech_description"
-    t.decimal  "price",            :precision => 8, :scale => 2,                      :null => false
+    t.decimal  "price",               :precision => 8, :scale => 2,                      :null => false
     t.string   "articul"
-    t.integer  "count",                                          :default => 0
-    t.string   "status",                                         :default => "based"
-    t.string   "presence",                                       :default => "None"
-    t.integer  "category_id",                                                         :null => false
+    t.integer  "count",                                             :default => 0
+    t.string   "status",                                            :default => "based"
+    t.string   "presence",                                          :default => "None"
+    t.integer  "category_id",                                                            :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
 end

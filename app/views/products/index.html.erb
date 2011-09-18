@@ -1,10 +1,11 @@
 <% @products.each_with_index do |product, index| %>
     <ul>
-      <h2><%= "Number of product #{index}" %></h2>
+      <h2><%= "Number of product: #{index+1}" %></h2>
       <li><%= product.caption %></li>
       <li><%= product.description %></li>
       <li><%= product.tech_description %></li>
       <li><%= product.price %></li>
       <li><%= product.category.name %></li>
+      <li><%= image_tag product.avatar.url(:thumb) %></li>
     </ul>
 <% end %>
