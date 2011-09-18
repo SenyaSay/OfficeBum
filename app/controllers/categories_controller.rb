@@ -47,7 +47,7 @@ class CategoriesController < ApplicationController
   end
 
   def find_categories
-    @categories = Category.all
+    @categories = Category.roots
   end
 
   def set_flash_error

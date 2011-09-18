@@ -1,11 +1,13 @@
 <table>
-  <% @categories.each do |category| %>
-      <tr>
-        <td><%= category.name %></td>
-        <td><%= link_to 'Show', category %></td>
-        <td><%= link_to 'Edit', edit_category_path(category.id) %></td>
-        <td><%= link_to 'Remove', category, :method => :delete %></td>
-      </tr>
+  <% @categories.each do |root| %>
+      <% root.self_and_descendants.each do |category| %>
+          <tr>
+            <td><%= "#{'--'*category.level} #{category.name}" %></td>
+            <td><%= link_to 'Show', category %></td>
+            <td><%= link_to 'Edit', edit_category_path(category.id) %></td>
+            <td><%= link_to 'Remove', category, :method => :delete %></td>
+          </tr>
+      <% end %>
   <% end %>
 </table>
 
