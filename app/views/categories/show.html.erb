@@ -1,0 +1,5 @@
+<div>
+  <%= @category.name %>
+  <%= link_to 'Edit', edit_category_path(@category) %>
+  <%= link_to 'Remove', category_path(@category), :method => :delete %>
+</div>

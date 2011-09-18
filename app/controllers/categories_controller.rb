@@ -1,7 +1,11 @@
 class CategoriesController < ApplicationController
+  before_filter :find_categories, :only => :index
+  before_filter :find_category, :only => [:show, :edit, :update, :destroy]
 
   def index
-    @categories = Category.all
+  end
+
+  def show
   end
 
   def new
@@ -13,8 +17,40 @@ class CategoriesController < ApplicationController
     if @category.save
       redirect_to categories_path
     else
-      flash[:error] = @category.errors.full_messages
+      set_flash_error
       render :new
     end
+  end
+
+  def edit
+  end
+
+  def update
+    if @category.update_attributes(params[:category])
+      flash[:notice] = 'Category was successfully updated.'
+      redirect_to(@category)
+    else
+      set_flash_error
+      render :edit
+    end
+  end
+
+  def destroy
+    @category.destroy
+    redirect_to categories_path
+  end
+
+  private
+
+  def find_category
+    @category = Category.find(params[:id])
+  end
+
+  def find_categories
+    @categories = Category.all
+  end
+
+  def set_flash_error
+    flash[:error] = @category.errors.full_messages
   end
 end

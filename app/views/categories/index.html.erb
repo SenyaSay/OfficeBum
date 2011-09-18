@@ -1,5 +1,12 @@
-<ul>
+<table>
   <% @categories.each do |category| %>
-      <li><%= category.name %></li>
+      <tr>
+        <td><%= category.name %></td>
+        <td><%= link_to 'Show', category %></td>
+        <td><%= link_to 'Edit', edit_category_path(category.id) %></td>
+        <td><%= link_to 'Remove', category, :method => :delete %></td>
+      </tr>
   <% end %>
-</ul>
+</table>
+
+<%= link_to 'Add category', new_category_path %>

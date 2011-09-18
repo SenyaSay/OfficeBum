@@ -1,0 +1,16 @@
+<% form_for @category do |f| %>
+    <h3><%= flash[:error] %></h3>
+
+    <p>
+      <%= f.label :name %><br/>
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label :parent_id %><br/>
+      <%= f.select(:parent_id, nested_set_options(Category, @category) {|i| "#{'-' * i.level} #{i.name}" }) %>
+    </p>
+
+    <p>
+      <%= f.submit 'Submit' %>
+    </p>
+<% end %>
