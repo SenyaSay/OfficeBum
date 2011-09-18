@@ -5,7 +5,12 @@
       <li><%= product.description %></li>
       <li><%= product.tech_description %></li>
       <li><%= product.price %></li>
-      <li><%= product.category.name %></li>
+      <li><%= product.category.try(:name) %></li>
       <li><%= image_tag product.avatar.url(:thumb) %></li>
+      <li>
+        <%= link_to 'Show', product %>
+        <%= link_to 'Edit', edit_product_path(product) %>
+        <%= link_to 'Remove', product_path(product), :method => :delete %>
+      </li>
     </ul>
 <% end %>

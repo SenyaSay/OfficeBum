@@ -1,6 +1,9 @@
 class ProductsController < ApplicationController
-    def index
-    @products = Product.all
+
+  before_filter :find_products, :only => :index
+  before_filter :find_product, :only => [:show, :edit, :update, :destroy]
+
+  def index
   end
 
   def new
@@ -12,8 +15,43 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to products_path
     else
-      flash[:error] = @product.errors.full_messages
+      set_flash_error
       render :new
     end
+  end
+
+  def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @product.update_attributes(params[:product])
+      flash[:notice] = 'Product was successfully updated.'
+      redirect_to(@product)
+    else
+      set_flash_error
+      render :edit
+    end
+  end
+
+  def destroy
+    @product.destroy
+    redirect_to categories_path
+  end
+
+  private
+
+  def find_product
+    @product = Product.find(params[:id])
+  end
+
+  def find_products
+    @products = Product.all
+  end
+
+  def set_flash_error
+    flash[:error] = @product.errors.full_messages
   end
 end
