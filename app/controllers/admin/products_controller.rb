@@ -1,4 +1,4 @@
-class ProductsController < ApplicationController
+class Admin::ProductsController < ApplicationController
 
   before_filter :find_products, :only => :index
   before_filter :find_product, :only => [:show, :edit, :update, :destroy]
@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new params[:product]
     if @product.save
-      redirect_to products_path
+      redirect_to admin_products_path
     else
       set_flash_error
       render :new
@@ -29,7 +29,7 @@ class ProductsController < ApplicationController
   def update
     if @product.update_attributes(params[:product])
       flash[:notice] = 'Product was successfully updated.'
-      redirect_to(@product)
+      redirect_to admin_product_path(@product)
     else
       set_flash_error
       render :edit
@@ -38,7 +38,7 @@ class ProductsController < ApplicationController
 
   def destroy
     @product.destroy
-    redirect_to categories_path
+    redirect_to admin_products_path
   end
 
   private

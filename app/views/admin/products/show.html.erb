@@ -6,9 +6,9 @@
   <li><%= @product.category.try(:name) %></li>
   <li><%= image_tag @product.avatar.url(:thumb) %></li>
   <li>
-    <%= link_to 'Edit', edit_product_path(@product) %>
-    <%= link_to 'Remove', product_path(@product), :method => :delete %>
+    <%= link_to 'Edit', edit_admin_product_path(@product) %>
+    <%= link_to 'Remove', admin_product_path(@product), :method => :delete %>
   </li>
 </ul>
 
-<%= link_to 'All products', products_path %>
+<%= link_to 'All products', admin_products_path %>

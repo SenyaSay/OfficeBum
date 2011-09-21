@@ -1,0 +1,7 @@
+<div>
+  <%= @category.name %>
+  <%= link_to 'Edit', edit_admin_category_path(@category) %>
+  <%= link_to 'Remove', admin_category_path(@category), :method => :delete %>
+</div>
+
+<%= link_to 'All categories', admin_categories_path %>

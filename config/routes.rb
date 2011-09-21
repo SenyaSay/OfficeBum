@@ -25,9 +25,10 @@ OfficeBum::Application.routes.draw do
   #     end
   #   end
 
-  root :to => "categories#index"
-  resources :categories
-  resources :products
+  namespace :admin do
+    root :to => "categories#index"
+    resources :categories, :products
+  end
 
   # Sample resource route with sub-resources:
   #   resources :products do

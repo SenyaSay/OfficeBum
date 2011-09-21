@@ -1,4 +1,4 @@
-class CategoriesController < ApplicationController
+class Admin::CategoriesController < ApplicationController
   before_filter :find_categories, :only => :index
   before_filter :find_category, :only => [:show, :edit, :update, :destroy]
 
@@ -15,7 +15,7 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new params[:category]
     if @category.save
-      redirect_to categories_path
+      redirect_to admin_categories_path
     else
       set_flash_error
       render :new
@@ -28,7 +28,7 @@ class CategoriesController < ApplicationController
   def update
     if @category.update_attributes(params[:category])
       flash[:notice] = 'Category was successfully updated.'
-      redirect_to(@category)
+      redirect_to admin_category_path(@category)
     else
       set_flash_error
       render :edit
@@ -37,7 +37,7 @@ class CategoriesController < ApplicationController
 
   def destroy
     @category.destroy
-    redirect_to categories_path
+    redirect_to admin_categories_path
   end
 
   private
