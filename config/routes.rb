@@ -26,7 +26,7 @@ OfficeBum::Application.routes.draw do
   #   end
 
   namespace :admin do
-    root :to => "categories#index"
+    root :to => "home#index"
     resources :categories, :products
   end
 
