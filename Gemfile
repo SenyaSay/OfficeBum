@@ -1,15 +1,10 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.4'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 gem 'mysql2', '0.2.6'
-
 gem 'awesome_nested_set', '2.0.2'
-
 gem 'paperclip', '~> 2.4'
+gem 'devise', '1.4.9'
 
 # Use unicorn as the web server
 # gem 'unicorn'
