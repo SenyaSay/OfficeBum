@@ -1,0 +1,3 @@
+class FLP < User
+
+end
