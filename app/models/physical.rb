@@ -1,3 +1,0 @@
-class Physical < User
-  
-end

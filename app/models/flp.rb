@@ -1,3 +1,3 @@
-class FLP < User
+class FLP < Company
 
 end

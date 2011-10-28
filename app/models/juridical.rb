@@ -1,3 +1,3 @@
-class Juridical < User
+class Juridical < Company
 
 end
