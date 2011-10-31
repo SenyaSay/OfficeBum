@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111028124348) do
+ActiveRecord::Schema.define(:version => 20111031183848) do
 
   create_table "categories", :force => true do |t|
     t.string   "name",       :null => false
@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(:version => 20111028124348) do
     t.string   "authentication_token"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "type"
+    t.string   "role"
     t.string   "middle_name",            :limit => 15
     t.string   "phone",                  :limit => 15
     t.integer  "company_id"

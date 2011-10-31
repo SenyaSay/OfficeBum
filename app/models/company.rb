@@ -1,5 +1,5 @@
 class Company < ActiveRecord::Base
-  has_many :managers
+  has_many :users
 
-  include PhoneValidation
+#  include PhoneValidation
 end

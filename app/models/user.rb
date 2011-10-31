@@ -5,8 +5,11 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :token_authenticatable, :confirmable, :lockable, :timeoutable
 
-  # Setup accessible (or protected) attributes for your model
-#  attr_accessible :email, :password, :password_confirmation, :remember_me
 
 #  include PhoneValidation
+  belongs_to :company
+  accepts_nested_attributes_for :company
+
+  belongs_to :manager, :class_name => "User", :foreign_key => "manager_id"
+  has_many :subordinates, :class_name => "User"
 end
