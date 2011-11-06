@@ -1,4 +1,5 @@
 class Admin::CategoriesController < ApplicationController
+  before_filter :authenticate_admin!
   before_filter :find_categories, :only => :index
   before_filter :find_category, :only => [:show, :edit, :update, :destroy]
 
