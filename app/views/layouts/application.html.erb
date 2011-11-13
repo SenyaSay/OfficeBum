@@ -8,7 +8,22 @@
 </head>
 <body>
 
-<%= yield %>
+<div id="left_column">
+  <%= yield :top_categories %>
+  <%= yield :subcategories %>
+  <div id="stats"></div>
+</div>
+
+<div id="middle_column">
+  <%= yield %>
+</div>
+
+<div id="right_column">
+  <%= yield :top_products %>
+  <div id="search"></div>
+  <div id="sign_in"></div>
+  <div id="contacts"></div>
+</div>
 
 </body>
 </html>

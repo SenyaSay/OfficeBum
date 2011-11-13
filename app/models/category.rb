@@ -3,4 +3,9 @@ class Category < ActiveRecord::Base
   has_many :products
 
   validates_presence_of :name
+
+  def subcategories
+    children.present? ? children : self_and_siblings
+  end
+
 end

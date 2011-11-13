@@ -1,0 +1,27 @@
+<div id="breadcrumbs"></div>
+<div id="products">
+  <%= render :partial => "product", :collection => @products %>
+</div>
+<div></div>
+
+<% content_for :subcategories do %>
+    <div id="subcategories">
+      <ul>
+        <%= render :partial => 'subcategory', :collection => @subcategories %>
+      </ul>
+    </div>
+<% end %>
+
+<% content_for :top_categories do %>
+    <div id="top_categories">
+      <%= render :partial => 'subcategory', :collection => @top_subcategories %>
+    </div>
+<% end %>
+
+<% content_for :top_products do %>
+    <ul id="top_products">
+      <% @top_products.each do |tp| %>
+        <li><%= tp.caption %></li>
+      <% end %>
+    </ul>
+<% end %>
