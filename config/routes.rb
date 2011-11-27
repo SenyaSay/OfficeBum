@@ -2,9 +2,9 @@ OfficeBum::Application.routes.draw do
   devise_for :admins
 
   devise_for :users, :controllers  => {
-             :registrations => 'users/registrations'
+             :registrations => 'users/registrations',
+             :sessions => 'users/sessions'
            }
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

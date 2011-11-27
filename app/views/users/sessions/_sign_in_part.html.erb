@@ -1,0 +1,7 @@
+<div id="sign_in">
+  <% if current_user %>
+      <%= "Hello, #{current_user.email}" %>
+  <% else %>
+      <%= render 'users/sessions/sign_in_form' %>
+  <% end %>
+</div>

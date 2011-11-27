@@ -23,15 +23,15 @@
         <div id="stats"></div>
       </div>
 
-      <div id="content">
-        <%= yield %>
-      </div>
-
       <div class="sidebar" id="sideRight">
         <%= yield :top_products %>
         <div id="search"></div>
-        <div id="sign_in"></div>
+        <%= render 'users/sessions/sign_in_part' %>
         <div id="contacts"></div>
+      </div>
+
+      <div id="content">
+        <%= yield %>
       </div>
     </div>
 

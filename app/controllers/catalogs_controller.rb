@@ -1,4 +1,4 @@
-class CatalogsController < ApplicationController
+class CatalogsController < UserBaseController
   before_filter :current_category
   before_filter :find_subcategories
   before_filter :find_products

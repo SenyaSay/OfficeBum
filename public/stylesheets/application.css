@@ -38,9 +38,6 @@ ul {
 /* Middle
 -----------------------------------------------------------------------------*/
 #middle {
-	border-left: 250px solid #B5E3FF;
-	border-right: 250px solid #FFACAA;
-	height: 1%;
 	position: relative;
 }
 #middle:after {
@@ -52,12 +49,10 @@ ul {
 }
 #container {
 	width: 100%;
-	float: left;
 	overflow: hidden;
-	margin-right: -100%;
+	/*margin-right: -100%;*/
 }
 #content {
-	padding: 0 20px;
 }
 
 /* Sidebar Left
@@ -67,14 +62,12 @@ ul {
 	width: 250px;
 	position: relative;
 	background: #B5E3FF;
-	left: -250px;
 }
 
 /* Sidebar Right
 -----------------------------------------------------------------------------*/
 #sideRight {
 	float: right;
-	margin-right: -250px;
 	width: 250px;
 	position: relative;
 	background: #FFACAA;
