@@ -20,8 +20,6 @@
 
 <% content_for :top_products do %>
     <ul id="top_products">
-      <% @top_products.each do |tp| %>
-        <li><%= tp.caption %></li>
-      <% end %>
+        <%= render :partial => 'top_product', :collection => @top_products %>
     </ul>
 <% end %>

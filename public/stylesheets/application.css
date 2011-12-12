@@ -50,9 +50,16 @@ ul {
 #container {
 	width: 100%;
 	overflow: hidden;
-	/*margin-right: -100%;*/
 }
 #content {
+}
+
+.product {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    border:  1px solid black;
+    overflow: hidden;
 }
 
 /* Sidebar Left
@@ -62,6 +69,12 @@ ul {
 	width: 250px;
 	position: relative;
 	background: #B5E3FF;
+}
+
+#contacts,
+#top_categories,
+#top_products {
+    background-color: #7fffd4;
 }
 
 /* Sidebar Right
