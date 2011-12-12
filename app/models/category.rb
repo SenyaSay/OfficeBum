@@ -7,5 +7,4 @@ class Category < ActiveRecord::Base
   def subcategories
     children.present? ? children : self_and_siblings
   end
-
 end
