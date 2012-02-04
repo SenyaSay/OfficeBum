@@ -1,4 +1,6 @@
 class Admin::ProductsController < ApplicationController
+  layout 'admin'
+
   before_filter :authenticate_admin!
   before_filter :find_products, :only => :index
   before_filter :find_product, :only => [:show, :edit, :update, :destroy]
