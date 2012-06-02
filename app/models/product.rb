@@ -1,7 +1,10 @@
 class Product < ActiveRecord::Base
-  belongs_to :category
-  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  # attr_accessible :title, :body
+  mount_uploader :image, ImageUploader
 
-  validates_presence_of :caption, :price
-  validates_numericality_of :price
+  has_many :product_characteristics
+  has_many :characteristics, :through => :product_characteristics
+
+  validates :name, :presence => true
+
 end

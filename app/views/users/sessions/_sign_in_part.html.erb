@@ -1,8 +1,0 @@
-<div id="sign_in">
-  <% if current_user %>
-      <%= "Hello, #{current_user.email}" %>
-      <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
-  <% else %>
-      <%= render 'users/sessions/sign_in_form' %>
-  <% end %>
-</div>

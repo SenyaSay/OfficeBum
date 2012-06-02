@@ -1,11 +1,6 @@
 OfficeBum::Application.routes.draw do
-  devise_for :admins
 
-  devise_for :users, :controllers  => {
-             :registrations => 'users/registrations',
-             :sessions => 'users/sessions'
-           }
-
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -32,11 +27,6 @@ OfficeBum::Application.routes.draw do
   #     end
   #   end
 
-  namespace :admin do
-    root :to => "home#index"
-    resources :categories, :products
-  end
-
   # Sample resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales
@@ -57,15 +47,18 @@ OfficeBum::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  
+  namespace :admin do
+    resources :products
+  end
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  resource :catalog, :only => :show
-  root :to => "catalogs", :action => :show
+  # root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id(.:format)))'
+  # match ':controller(/:action(/:id))(.:format)'
 end

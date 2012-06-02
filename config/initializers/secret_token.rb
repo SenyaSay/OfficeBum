@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-OfficeBum::Application.config.secret_token = '663c38a59f733e99fcf69c119f72d03193c34e8ea0f8c125fc4d5ae74f5c2be011dcd5b3cd9e1cc791a6646002b6497ce9712c10b3d6062d66c6b771e01a9620'
+OfficeBum::Application.config.secret_token = '2bb67d71b3c2382a19bc60d757918aaaceec0b60dbb53eb12f014aead1f4541ddfcfa9c8807275c2a316492bb6fda1f94967279a0e895aae5091a23908c05438'
