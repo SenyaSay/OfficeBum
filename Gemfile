@@ -10,6 +10,20 @@ gem 'carrierwave', '0.6.2'
 gem 'rmagick', '2.13.1'
 gem 'devise', '2.1.0'
 
+group :development do
+  gem 'parallel_tests', '0.8.2'
+  gem 'unicorn', '4.3.1'
+end
+
+group :test do
+  gem 'fakeweb', '1.3.0'
+  gem 'factory_girl_rails', '3.3.0'
+end
+
+group :test, :development do
+  gem 'rspec-rails', '2.10.1'
+end
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
