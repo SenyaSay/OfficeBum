@@ -5,5 +5,5 @@
 	Уровень характеристики: 
 	<%= f.text_field :level %> </p>
   <%= f.submit "Изменить характеристику" %>
-	<%= link_to 'Back', admin_characteristics_path %>
+	<%= f.link_to 'Back', admin_characteristics_path %>
 <% end %>
