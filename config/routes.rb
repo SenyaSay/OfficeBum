@@ -50,6 +50,7 @@ OfficeBum::Application.routes.draw do
   
   namespace :admin do
     resources :products
+		resources :characteristics
   end
 
   # You can have the root of your site routed with "root"
