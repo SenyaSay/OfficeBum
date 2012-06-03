@@ -8,8 +8,7 @@ gem 'rails', '3.2.3'
 gem 'mysql2', '0.3.11'
 gem 'carrierwave', '0.6.2'
 gem 'rmagick', '2.13.1'
-
-
+gem 'devise', '2.1.0'
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -1,6 +1,7 @@
 OfficeBum::Application.routes.draw do
 
-  
+  devise_for :admins, :skip => [:registrations]
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -49,6 +50,7 @@ OfficeBum::Application.routes.draw do
   #   end
   
   namespace :admin do
+    root :to => 'dashboard#index'
     resources :products
   end
 
