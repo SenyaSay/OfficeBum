@@ -1,0 +1,21 @@
+<h1> Characteristics </h1>
+
+<table>
+	<tr> 
+		<th> Name </th>
+		<th> Level </th>
+		<th> </th>
+		<th> </th>
+		<th> </th>
+	</tr>
+<% @characteristics.each do |characteristic| %>
+	<tr>
+		<td> <%= characteristic.name %> </td>
+		<td> <%= characteristic.level %> </td>
+		<td> <%= link_to 'Show', admin_characteristic_path(characteristic) %> </td>
+    <td> <%= link_to 'Edit', edit_admin_characteristic_path(characteristic) %> </td>
+    <td> <%= link_to 'Delete', delete_admin_characteristic_path(characteristic), :method => :delete %> </td>
+	</tr>	
+<% end %>
+</table>
+<%= link_to 'Add Characteristic', new_admin_characteristic_path %>	

@@ -52,6 +52,7 @@ OfficeBum::Application.routes.draw do
   namespace :admin do
     root :to => 'dashboard#index'
     resources :products
+		resources :characteristics
   end
 
   # You can have the root of your site routed with "root"
