@@ -1,0 +1,17 @@
+<%= form_for @product, :url => { :action => "create" } do |f| %>
+  <%= flash[:error] %>
+<div class="product_content">
+	<p> Наименование товара: 
+  <%= f.text_field :name %> <br>
+	Цена:
+	<%= f.text_field :price %> <br>
+	Описание товара: 
+	<%= f.text_area :description %> <br>
+	Путь к файлу картинки:
+	<%= f.file_field :image %> </p>
+</div>
+<div class="product_button">
+  <%= f.submit "Добавить товар" %>
+	<%= link_to 'Back', admin_products_path %>
+</div>
+<% end %>

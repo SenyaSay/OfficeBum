@@ -1,5 +1,6 @@
 class Admin::CharacteristicsController < ApplicationController
 	before_filter :characteristic_find, :only => [:show, :edit, :update, :destroy]
+	before_filter :authenticate_admin!
 
 public
 	

@@ -1,5 +1,5 @@
 class Product < ActiveRecord::Base
-  # attr_accessible :title, :body
+  attr_accessible :name, :price, :description, :image
   mount_uploader :image, ImageUploader
 
   has_many :product_characteristics

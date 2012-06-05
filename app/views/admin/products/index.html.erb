@@ -1,0 +1,25 @@
+<h1> Products </h1>
+
+<table>
+	<tr> 
+		<th> Name </th>
+		<th> Price </th>
+		<th> Description </th>
+		<th> Image </th>
+		<th> </th>
+		<th> </th>
+		<th> </th>
+	</tr>
+<% @products.each do |product| %>
+	<tr>
+		<td> <%= product.name %> </td>
+		<td> <%= product.price %> </td>
+		<td> <%= product.description %> </td>
+		<td> <%= product.image %> </td>
+		<td> <%= link_to 'Show', admin_product_path(product) %> </td>
+    <td> <%= link_to 'Edit', edit_admin_product_path(product) %> </td>
+    <td> <%= link_to 'Delete', admin_product_path(product), :method => :delete %> </td>
+	</tr>	
+<% end %>
+</table>
+<%= link_to 'Add Product', new_admin_product_path %>	
