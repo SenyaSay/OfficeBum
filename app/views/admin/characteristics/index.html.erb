@@ -1,22 +1,22 @@
 <h1> Characteristics </h1>
 
 <table>
-	<tr> 
-		<th> Name </th>
-		<th> Level </th>
-		<th> </th>
-		<th> </th>
-		<th> </th>
-	</tr>
+  <tr> 
+    <th> Name </th>
+    <th> Level </th>
+    <th> </th>
+    <th> </th>
+    <th> </th>
+  </tr>
 <% @characteristics.each do |characteristic| %>
-	<tr>
-		<td> <%= characteristic.name %> </td>
-		<td> <%= characteristic.level %> </td>
-		<td> <%= link_to 'Show', admin_characteristic_path(characteristic) %> </td>
+  <tr>
+    <td> <%= characteristic.name %> </td>
+    <td> <%= characteristic.level %> </td>
+    <td> <%= link_to 'Show', admin_characteristic_path(characteristic) %> </td>
     <td> <%= link_to 'Edit', edit_admin_characteristic_path(characteristic) %> </td>
     <td> <%= link_to 'Delete', admin_characteristic_path(characteristic), :method => :delete %> </td>
-	</tr>	
+  </tr>	
 <% end %>
 </table>
 <%= link_to 'Add Characteristic', new_admin_characteristic_path %>	
-<%= link_to('Back to admin panel', admin_session_path(@admin)) %>
+<%= link_to('Back to admin panel', admin_root_path) %>

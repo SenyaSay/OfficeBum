@@ -1,13 +1,13 @@
 <%= form_for @characteristic, :url => { :action => "create" } do |f| %>
   <%= flash[:error] %>
 <div class="characteristic_content">
-	<p> Наименование характеристики: 
+  <p> Наименование характеристики: 
   <%= f.text_field :name %> <br>
-	Уровень характеристики: 
-	<%= f.text_field :level %> </p>
+  Уровень характеристики: 
+  <%= f.text_field :level %> </p>
 </div>
 <div class="characteristic_button">
   <%= f.submit "Добавить характеристику" %>
-	<%= link_to 'Back', admin_characteristics_path %>
 </div>
 <% end %>
+<%= link_to 'Back', admin_characteristics_path %>

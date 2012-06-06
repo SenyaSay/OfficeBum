@@ -1,52 +1,50 @@
 class Admin::ProductsController < ApplicationController
-	before_filter :product_find, :only => [:show, :edit, :update, :destroy]
-	before_filter :authenticate_admin!
-	def index
-		@products = Product.find(:all)
-	end
+  before_filter :product_find, :only => [:show, :edit, :update, :destroy]
+  before_filter :authenticate_admin!
+	
+  def index
+    @products = Product.all
+  end
 
-	def new
-		@product = Product.new
-	end
+  def new
+    @product = Product.new
+  end
 
-	def create
-		tempproduct = params[:product]
-		tempproduct[:price] = tempproduct[:price].try(:to_d) 
-		tempproduct[:image] = tempproduct[:image].try(:to_s)
-		@product = Product.new(tempproduct)
-		if @product.save
-			redirect_to :action => :index
-		else
-			flash[:error] = @product.errors.full_messages
-			render :new
-		end
-	end
+  def create
+    @product = Product.new(params[:product])
+    if @product.save
+      redirect_to :action => :index
+    else
+      flash[:error] = @product.errors.full_messages
+      render :new
+    end
+  end
 
-	def show
+  def show
 		
-	end
+  end
 
-	def edit
+  def edit
 		
-	end
+  end
 
-	def update
-		if @product.update_attributes(params[:product])
-			redirect_to :action => :index
-		else
-			flash[:error] = @characteristic.errors.full_messages
-			render :edit
-		end 
-	end
+  def update
+    if @product.update_attributes(params[:product])
+      redirect_to :action => :index
+    else
+      flash[:error] = @characteristic.errors.full_messages
+      render :edit
+    end 
+  end
 
-	def destroy
-		@product.destroy
-		redirect_to :action => :index
-	end		
+  def destroy
+    @product.destroy
+    redirect_to :action => :index
+  end		
 
-private
+  private
 
-	def product_find
-		@product = Product.find(params[:id])
-	end
+  def product_find
+    @product = Product.find(params[:id])
+  end
 end

@@ -1,21 +1,21 @@
 <p>
-	<b> Name: </b>
-	<%= @product.name %>
+  <b> Name: </b>
+  <%= @product.name %>
 </p>
 
 <p>
-	<b> Price: </b>
-	<%= @product.price %>
+  <b> Price: </b>
+  <%= @product.price %>
 </p>
 
 <p>
-	<b> Description: </b>
-	<%= @product.description %>
+  <b> Description: </b>
+  <%= @product.description %>
 </p>
 
 <p>
-	<b> Image: </b>
-	<%= @product.image %>
+  <b> Image: </b>
+  <%= image_tag(@product.image_url(:thumb)) %>
 </p>
 
 <%= link_to 'Edit', edit_admin_product_path(@product) %>

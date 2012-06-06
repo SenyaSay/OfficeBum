@@ -1,17 +1,21 @@
-<%= form_for @product, :url => { :action => "update" } do |f| %>
+<%= form_for @product, :url => { :action => "update" }, :html => {:multipart => true} do |f| %>
   <%= flash[:error] %>
-<div class="product_content">
-	<p> Наименование товара: 
-  <%= f.text_field :name %> <br>
-	Цена:
-	<%= f.text_field :price %> <br>
-	Описание товара: 
-	<%= f.text_area :description %> <br>
-	Путь к файлу картинки:
-	<%= f.file_field :image %> </p>
-</div>
-<div class="product_button">
-  <%= f.submit "Изменить товар" %>
-	<%= link_to 'Back', admin_products_path %>
-</div>
+  <div class="product_content"> 
+    <p> 
+      Наименование товара: 
+      <%= f.text_field :name %> <br /> 
+      Цена:
+      <%= f.text_field :price %> <br />
+      Oписание товара: 
+      <%= f.text_area :description %> <br />
+      Путь к файлу картинки:
+      <%= f.file_field :image %> 
+      <%= image_tag @product.image_url(:thumb)%>
+    </p>
+  </div>
+  
+  <div class="product_button">
+    <%= f.submit "Сохранить изменения" %>
+  </div>
 <% end %>
+<%= link_to 'Back', admin_products_path %>
