@@ -1,7 +1,6 @@
-class Admin::CharacteristicsController < ApplicationController
+class Admin::CharacteristicsController < Admin::BaseController
   before_filter :characteristic_find, :only => [:show, :edit, :update, :destroy]
-  before_filter :authenticate_admin!
-	
+
   def index
     @characteristics = Characteristic.all
   end

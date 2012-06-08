@@ -1,7 +1,6 @@
-class Admin::ProductsController < ApplicationController
+class Admin::ProductsController < Admin::BaseController
   before_filter :product_find, :only => [:show, :edit, :update, :destroy]
-  before_filter :authenticate_admin!
-	
+
   def index
     @products = Product.all
   end
