@@ -9,6 +9,7 @@ gem 'mysql2', '0.3.11'
 gem 'carrierwave', '0.6.2'
 gem 'rmagick', '2.13.1'
 gem 'devise', '2.1.0'
+gem 'kaminari'
 
 group :development do
   gem 'parallel_tests', '0.8.2'
