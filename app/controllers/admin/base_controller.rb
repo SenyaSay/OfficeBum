@@ -1,4 +1,4 @@
 class Admin::BaseController < ApplicationController
-  layout nil
+  layout 'admin'
   before_filter :authenticate_admin!
 end
