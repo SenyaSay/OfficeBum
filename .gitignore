@@ -29,3 +29,4 @@ REVISION
 /public/javascripts/cache/*
 /public/stylesheets/cache/*
 /public/assets/**/*
+/public/uploads/*
