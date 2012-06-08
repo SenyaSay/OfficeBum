@@ -13,6 +13,15 @@
       <%= image_tag @product.image_url(:thumb)%>
     </p>
   </div>
+
+  <div class='characteristics'>
+    <%= f.fields_for :product_characteristics do |pc| %>
+      <% @characteristics.each do |characteristic| %>
+        <%= characteristic.name %>
+        <%= pc.text_field(characteristic.id, :value => @product.characteristic_value(characteristic)) %> <br/>
+      <% end %>
+    <% end %>
+  </div>
   
   <div class="product_button">
     <%= f.submit "Сохранить изменения" %>

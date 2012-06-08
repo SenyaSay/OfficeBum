@@ -12,6 +12,15 @@
     </p>
   </div>
 
+    <div class='characteristics'>
+        <%= f.fields_for :product_characteristics do |pc| %>
+            <% @characteristics.each do |characteristic|%>
+                <%= characteristic.name %>
+                <%= pc.text_field(characteristic.id) %> <br/>
+            <% end %>
+        <% end %>
+    </div>
+
   <div class="product_button">
     <%= f.submit "Добавить товар" %>
   </div>

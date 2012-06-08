@@ -1,5 +1,7 @@
 class Admin::ProductsController < Admin::BaseController
-  before_filter :product_find, :only => [:show, :edit, :update, :destroy]
+  before_filter :find_product, :only => [:show, :edit, :update, :destroy]
+  before_filter :find_characteristics, :only => [:new, :edit]
+  before_filter :characteristic_params, :only => [:create, :update]
 
   def index
     @products = Product.all
@@ -12,6 +14,7 @@ class Admin::ProductsController < Admin::BaseController
   def create
     @product = Product.new(params[:product])
     if @product.save
+      @product.update_characteristics @characteristic_params
       redirect_to :action => :index
     else
       flash[:error] = @product.errors.full_messages
@@ -24,11 +27,12 @@ class Admin::ProductsController < Admin::BaseController
   end
 
   def edit
-		
+
   end
 
   def update
     if @product.update_attributes(params[:product])
+      @product.update_characteristics @characteristic_params
       redirect_to :action => :index
     else
       flash[:error] = @characteristic.errors.full_messages
@@ -43,7 +47,15 @@ class Admin::ProductsController < Admin::BaseController
 
   private
 
-  def product_find
+  def find_characteristics
+    @characteristics = Characteristic.all
+  end
+
+  def find_product
     @product = Product.find(params[:id])
+  end
+
+  def characteristic_params
+    @characteristic_params = params[:product].delete(:product_characteristics)
   end
 end
