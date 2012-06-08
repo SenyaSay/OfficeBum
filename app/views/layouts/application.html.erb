@@ -11,30 +11,18 @@
     <div id="header">
         Header
     </div>
-    <!-- #header-->
+
     <div id="middle">
         <div id="container">
-            <div id="content">
-                <%= yield %>
-            </div>
-            <!-- #content-->
+            <div id="content"><%= yield %></div>
         </div>
-        <!-- #container-->
-        <div class="sidebar" id="sideLeft">
-            <%= yield :side_left %>
-        </div>
-        <!-- .sidebar#sideLeft -->
-        <div class="sidebar" id="sideRight">
-            <%= yield :side_right %>
-        </div>
-        <!-- .sidebar#sideRight -->
+        <div class="sidebar" id="sideLeft"><%= yield :side_left %></div>
+        <div class="sidebar" id="sideRight"><%= yield :side_right %></div>
     </div>
-    <!-- #middle-->
+
+    <div id="footer">
+        Footer
+    </div>
 </div>
-<!-- #wrapper -->
-<div id="footer">
-    Footer
-</div>
-<!-- #footer -->
 </body>
 </html>

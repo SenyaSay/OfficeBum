@@ -3,14 +3,9 @@
     padding: 0;
 }
 
-html {
-    height: 100%;
-}
-
 body {
     font: 12px/18px Arial, Tahoma, Verdana, sans-serif;
     width: 100%;
-    height: 100%;
 }
 
 a {
@@ -38,9 +33,6 @@ input {
 #wrapper {
     width: 1000px;
     margin: 0 auto;
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
 }
 
 /* Header
@@ -53,8 +45,8 @@ input {
 /* Middle
 -----------------------------------------------------------------------------*/
 #middle {
-    width: 100%;
-    padding: 0 0 100px;
+    border-left: 250px solid #B5E3FF;
+    border-right: 250px solid #FFACAA;
     height: 1%;
     position: relative;
 }
@@ -71,10 +63,11 @@ input {
     width: 100%;
     float: left;
     overflow: hidden;
+    margin-right: -100%;
 }
 
 #content {
-    padding: 0 270px 0 270px;
+    padding: 0 20px;
 }
 
 /* Sidebar Left
@@ -82,18 +75,17 @@ input {
 #sideLeft {
     float: left;
     width: 250px;
-    margin-left: -100%;
     position: relative;
     background: #B5E3FF;
+    left: -250px;
 }
 
 /* Sidebar Right
 -----------------------------------------------------------------------------*/
 #sideRight {
-    float: left;
-    margin-right: -3px;
+    float: right;
+    margin-right: -250px;
     width: 250px;
-    margin-left: -250px;
     position: relative;
     background: #FFACAA;
 }
@@ -101,9 +93,6 @@ input {
 /* Footer
 -----------------------------------------------------------------------------*/
 #footer {
-    width: 1000px;
-    margin: -100px auto 0;
     height: 100px;
     background: #BFF08E;
-    position: relative;
 }
