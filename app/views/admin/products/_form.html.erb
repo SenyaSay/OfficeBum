@@ -1,14 +1,16 @@
 <%= form_for @product, :url => { :action => action }, :html => { :multipart => true } do |f| %>
     <%= flash[:error] %>
     <div class="product_content">
-      <p> Наименование товара:
+      <p>
+        Product name:
         <%= f.text_field :name %> <br />
-        Цена:
+        Price:
         <%= f.text_field :price %> <br />
-        Описание товара:
+        Description:
         <%= f.text_area :description %> <br />
-        Путь к файлу картинки:
+        Add image:
         <%= f.file_field :image %>
+        <%= image_tag (@product.image_url(:thumb) || ''), :name => "preview", :id => "preview", :size => "50x50" %>
       </p>
     </div>
 
@@ -22,7 +24,7 @@
     </div>
 
     <div class="product_button">
-      <%= f.submit "Добавить товар" %>
+      <%= f.submit "Submit" %>
     </div>
 <% end %>
 <%= link_to 'Back', admin_products_path %>
