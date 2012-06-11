@@ -30,6 +30,10 @@ input {
     vertical-align: middle;
 }
 
+li {
+    list-style-type: none;
+}
+
 #wrapper {
     width: 1000px;
     margin: 0 auto;

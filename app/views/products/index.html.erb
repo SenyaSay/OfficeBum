@@ -1,5 +1,9 @@
 <% content_for :side_left do %>
-    Here should be placed menu of categories
+    <ul>
+        <% @menu.each do |item| %>
+            <li><%= link_to_unless_current item.name, :parent => item.parent, :current => item.id %></li>
+        <% end %>
+    </ul>
 <% end %>
 
 <% content_for :side_right do %>

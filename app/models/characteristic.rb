@@ -4,4 +4,6 @@ class Characteristic < ActiveRecord::Base
 
   validates :name, :presence => true
 	attr_accessible :name, :level
+
+  scope :with_level, :conditions => "level is not null"
 end
