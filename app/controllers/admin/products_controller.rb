@@ -4,7 +4,7 @@ class Admin::ProductsController < Admin::BaseController
   before_filter :characteristic_params, :only => [:create, :update]
 
   def index
-    @products = Product.all
+    @products = Product.page(params[:page]).per(50)
   end
 
   def new
@@ -35,7 +35,7 @@ class Admin::ProductsController < Admin::BaseController
       @product.update_characteristics @characteristic_params
       redirect_to :action => :index
     else
-      flash[:error] = @characteristic.errors.full_messages
+      flash[:error] = @product.errors.full_messages
       render :edit
     end 
   end

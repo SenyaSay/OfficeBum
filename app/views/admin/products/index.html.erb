@@ -22,5 +22,7 @@
 	</tr>	
 <% end %>
 </table>
+<%= paginate @products%>
 <%= link_to 'Add Product', new_admin_product_path %>
 <%= link_to('Back to admin panel', admin_root_path) %>
+
