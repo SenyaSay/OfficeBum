@@ -2,7 +2,6 @@ class Admin::ProductsController < Admin::BaseController
   before_filter :product_find, :only => [:show, :edit, :update, :destroy]
 
   def index
-    @products = Product.all
     @products = Product.page(params[:page]).per(50)
   end
 
@@ -32,7 +31,7 @@ class Admin::ProductsController < Admin::BaseController
     if @product.update_attributes(params[:product])
       redirect_to :action => :index
     else
-      flash[:error] = @characteristic.errors.full_messages
+      flash[:error] = @product.errors.full_messages
       render :edit
     end 
   end
