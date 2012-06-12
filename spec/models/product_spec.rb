@@ -4,7 +4,7 @@ describe Product do
   let(:product) { create :product }
   let(:characteristic) { create :characteristic }
 
-  describe "update_characteristics" do
+  describe "#update_characteristics" do
     let(:new_characteristics) { { 1 => "a", 2 => "b", 3 => "" } }
 
     def do_update
@@ -25,7 +25,7 @@ describe Product do
     end
   end
 
-  describe "characteristic_value" do
+  describe "#characteristic_value" do
     subject { product.characteristic_value(characteristic) }
 
     context "when product has characteristic" do
