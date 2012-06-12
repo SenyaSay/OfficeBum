@@ -9,6 +9,6 @@ class ProductsController < ApplicationController
   private
 
   def build_menu
-    @menu = Menu.new(params[:current], params[:parent]).build
+    @menu = Menu.new(params[:top]).build
   end
 end

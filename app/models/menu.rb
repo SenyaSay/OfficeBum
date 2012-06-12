@@ -1,14 +1,14 @@
 class Menu
-  def initialize(current = nil, parent = nil)
-    root = parent || current
-    @base_item = Characteristic.find_by_id(root.to_i) if root
+  def initialize(top = nil)
+    @top = top
+    @base_item = Characteristic.find_by_id(@top.to_i) if @top
   end
 
   def build
     if @base_item
-      @base_item.product_characteristics.map{|pc| MenuItem.new(pc.id, pc.value, @base_item.id)}
+      @base_item.product_characteristics.group(:value).map{|pc| { :name => pc.value, :top => @base_item.id, :value => pc.value} }
     else
-      Characteristic.with_level.map { |c| MenuItem.new(c.id, c.name, nil) }
+      Characteristic.with_level.map { |c| {:name => c.name, :top => c.id } }
     end
   end
 end
