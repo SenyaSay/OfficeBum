@@ -10,5 +10,7 @@
     Here should be placed next parts: top products, login form, and third part
 <% end %>
 
-
+<% @products.each do |product| %>
+  <li><%= product.name[:top, :value] %></li>
+<% end %>
 List off products List off products List off productsList off productsList off productsList off productsList off productsList off productsList off productsList off productsList off productsList off productsList off productsList off productsList off productsList off products
