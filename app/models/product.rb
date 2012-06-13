@@ -22,7 +22,4 @@ class Product < ActiveRecord::Base
     product_characteristic.value if product_characteristic
   end
 
-  def self.build_items()
-    self.joins(:product_characteristics).where(:characteristic_id => params[:characteristic_id], :value => params[:value]).group(:name)
-  end
 end

@@ -11,6 +11,6 @@
 <% end %>
 
 <% @products.each do |product| %>
-  <li><%= product.name[:top, :value] %></li>
+  <li><%= product.name %></li>
 <% end %>
-List off products List off products List off productsList off productsList off productsList off productsList off productsList off productsList off productsList off productsList off productsList off productsList off productsList off productsList off productsList off products
+<%= paginate @products%>
