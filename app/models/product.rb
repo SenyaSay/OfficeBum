@@ -7,6 +7,7 @@ class Product < ActiveRecord::Base
 
   validates :name, :presence => true
 
+  PAGINATE_PER_PAGE = 9
 
   def update_characteristics(new_characteristics)
     characteristics.clear
@@ -22,4 +23,18 @@ class Product < ActiveRecord::Base
     product_characteristic.value if product_characteristic
   end
 
+  def self.products_list(characteristic = nil, value = nil, page = 1)
+    if value 
+      joins(:product_characteristics).where(:product_characteristics => { :characteristic_id => characteristic, :value => value } ).pagination(page) 
+      elsif characteristic
+        joins(:product_characteristics).where(:product_characteristics => { :characteristic_id => characteristic }).pagination(page)
+        else pagination(page)
+    end 
+  end
+
+  private
+
+  def self.pagination(page)
+    page(page).per(PAGINATE_PER_PAGE)
+  end
 end
