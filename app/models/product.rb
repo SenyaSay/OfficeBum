@@ -24,17 +24,12 @@ class Product < ActiveRecord::Base
   end
 
   def self.products_list(characteristic = nil, value = nil, page = 1)
-    if value 
-      joins(:product_characteristics).where(:product_characteristics => { :characteristic_id => characteristic, :value => value } ).pagination(page) 
+    (if value 
+      joins(:product_characteristics).where(:product_characteristics => { :characteristic_id => characteristic, :value => value } ) 
       elsif characteristic
-        joins(:product_characteristics).where(:product_characteristics => { :characteristic_id => characteristic }).pagination(page)
-        else pagination(page)
-    end 
+        joins(:product_characteristics).where(:product_characteristics => { :characteristic_id => characteristic }) 
+        else self 
+    end ).page(page).per(PAGINATE_PER_PAGE)
   end
 
-  private
-
-  def self.pagination(page)
-    page(page).per(PAGINATE_PER_PAGE)
-  end
 end
