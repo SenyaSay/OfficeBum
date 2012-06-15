@@ -9,6 +9,15 @@ class Product < ActiveRecord::Base
 
   PAGINATE_PER_PAGE = 9
 
+  def self.list(characteristic = nil, value = nil, page = 1)
+    (if (value && characteristic)
+      joins(:product_characteristics).where(:product_characteristics => { :characteristic_id => characteristic, :value => value } )
+     elsif characteristic
+        joins(:product_characteristics).where(:product_characteristics => { :characteristic_id => characteristic } )
+     else self
+    end ).page(page).per(PAGINATE_PER_PAGE)
+  end
+
   def update_characteristics(new_characteristics)
     characteristics.clear
     new_characteristics.each do |key, value|
@@ -21,15 +30,6 @@ class Product < ActiveRecord::Base
   def characteristic_value(characteristic)
     product_characteristic = product_characteristics.detect{|pc| pc.characteristic_id == characteristic.id }
     product_characteristic.value if product_characteristic
-  end
-
-  def self.products_list(characteristic = nil, value = nil, page = 1)
-    (if value 
-      joins(:product_characteristics).where(:product_characteristics => { :characteristic_id => characteristic, :value => value } ) 
-      elsif characteristic
-        joins(:product_characteristics).where(:product_characteristics => { :characteristic_id => characteristic }) 
-        else self 
-    end ).page(page).per(PAGINATE_PER_PAGE)
   end
 
 end

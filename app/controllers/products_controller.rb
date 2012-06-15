@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_filter :build_menu
 
   def index
-    @products = Product.products_list(params[:top], params[:value], params[:page])
+    @products = Product.list(params[:top], params[:value], params[:page])
   end
 
   private
