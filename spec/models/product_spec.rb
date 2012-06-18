@@ -5,18 +5,26 @@ describe Product do
   let(:characteristic) { create :characteristic }
 
   describe "#list" do
-    subject {product.list(characteristic, value, page)}
+   
+    let!(:product_characteristic1) {create :product_characterisitcs, :product_id => 1, :characteristic_id => 1 , :value => "1"}
+    let!(:product_characteristic2) {create :product_characterisitcs, :product_id => 1, :characteristic_id => 2 , :value => "2"}
+    let!(:product_characteristic3) {create :product_characterisitcs, :product_id => 2, :characteristic_id => 1 , :value => "1"}
+    let!(:product_characteristic4) {create :product_characterisitcs, :product_id => 3}
 
-    context "when product has value and characteristic" do
+    it "when product has value and characteristic" do
+      Product.list(1,1,1).count.should eq(2)
     end
 
-    context "when product has characteristic and hasn't value" do
+    it "when product has characteristic and hasn't value" do
+      Product.list(1,nil,1).count.should eq(2)
     end
 
-    context "when product hasn't caharacteristic and hasn't value, or hasn't only characteristic" do
+    it "when product hasn't caharacteristic and hasn't value, or hasn't only characteristic" do
+      Product.list(nil,nil,1).count.should eq(3)   
     end
+
   end
-
+    
   describe "#update_characteristics" do
     let(:new_characteristics) { { 1 => "a", 2 => "b", 3 => "" } }
 

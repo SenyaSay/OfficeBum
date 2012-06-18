@@ -9,15 +9,13 @@ class Product < ActiveRecord::Base
 
   PAGINATE_PER_PAGE = 9
 
-  scope :join , :joins => (:product_characteristics)
-
   scope :where_characteristic, lambda {|characteristic| where(:product_characteristics =>  {:characteristic_id => characteristic})}
 
   scope :where_value, lambda{ |value| where(:product_characteristics => {:value => value}) if value }
 
   def self.list(characteristic = nil, value = nil, page = 1)
     (if characteristic
-        join.where_characteristic(characteristic).where_value(value)
+        joins(:product_characterisics).where_characteristic(characteristic).where_value(value)
      else self
     end ).page(page).per(PAGINATE_PER_PAGE)
   end
