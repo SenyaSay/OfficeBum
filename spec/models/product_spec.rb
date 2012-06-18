@@ -4,6 +4,19 @@ describe Product do
   let(:product) { create :product }
   let(:characteristic) { create :characteristic }
 
+  describe "#list" do
+    subject {product.list(characteristic, value, page)}
+
+    context "when product has value and characteristic" do
+    end
+
+    context "when product has characteristic and hasn't value" do
+    end
+
+    context "when product hasn't caharacteristic and hasn't value, or hasn't only characteristic" do
+    end
+  end
+
   describe "#update_characteristics" do
     let(:new_characteristics) { { 1 => "a", 2 => "b", 3 => "" } }
 
@@ -43,4 +56,5 @@ describe Product do
       it { should be_nil }
     end
   end
+
 end
