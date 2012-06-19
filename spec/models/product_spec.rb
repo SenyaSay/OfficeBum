@@ -6,9 +6,9 @@ describe Product do
 
   describe "#list" do
    
-    let!(:product_characteristic1) {create :product_characterisitcs, :product_id => 1, :characteristic_id => 1 , :value => "1"}
-    let!(:product_characteristic2) {create :product_characterisitcs, :product_id => 1, :characteristic_id => 2 , :value => "2"}
-    let!(:product_characteristic3) {create :product_characterisitcs, :product_id => 2, :characteristic_id => 1 , :value => "1"}
+    let!(:product_characteristic1) {create :product_characterisitcs, :product_id => 1, :top => 1 , :value => 1}
+    let!(:product_characteristic2) {create :product_characterisitcs, :product_id => 1, :top => 2 , :value => 2}
+    let!(:product_characteristic3) {create :product_characterisitcs, :product_id => 2, :top => 1 , :value => 1}
     let!(:product_characteristic4) {create :product_characterisitcs, :product_id => 3}
 
     it "when product has value and characteristic" do

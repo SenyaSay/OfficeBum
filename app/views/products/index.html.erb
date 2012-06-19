@@ -11,6 +11,7 @@
 <% end %>
 
 <% @products.each do |product| %>
-  <li><%= product.name %></li>
+    <li><%= image_tag(product.image_url(:thumb)) if product.image? %><br>
+    <%= product.name %></li>
 <% end %>
 <%= paginate @products%>
