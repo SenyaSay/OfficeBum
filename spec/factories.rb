@@ -9,4 +9,10 @@ FactoryGirl.define do
     name "weight"
     sequence(:level) { |n| n }
   end
+
+  factory :product_characteristic do
+    product 
+    characteristic 
+    value "10"
+  end
 end

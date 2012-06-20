@@ -10,8 +10,7 @@
     Here should be placed next parts: top products, login form, and third part
 <% end %>
 
-<% @products.each do |product| %>
-    <li><%= image_tag(product.image_url(:thumb)) if product.image? %><br>
-    <%= product.name %></li>
-<% end %>
-<%= paginate @products%>
+<% @products.each do |product| %> 
+  <%= image_tag(product.image_url(:thumb)) if product.image? %>
+  <%= product.name %> 
+<%= paginate @products %>

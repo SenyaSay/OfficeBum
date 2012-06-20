@@ -6,25 +6,56 @@ describe Product do
 
   describe "#list" do
    
-    let!(:product_characteristic1) {create :product_characterisitcs, :product_id => 1, :top => 1 , :value => 1}
-    let!(:product_characteristic2) {create :product_characterisitcs, :product_id => 1, :top => 2 , :value => 2}
-    let!(:product_characteristic3) {create :product_characterisitcs, :product_id => 2, :top => 1 , :value => 1}
-    let!(:product_characteristic4) {create :product_characterisitcs, :product_id => 3}
+    let(:product1) { create :product }
+    let(:product2) { create :product }
+    let(:product3) { create :product }
 
-    it "when product has value and characteristic" do
-      Product.list(1,1,1).count.should eq(2)
+    let(:characteristic1) { create :characteristic }
+    let(:characteristic2) { create :characteristic }
+
+    let!(:product_characteristic1) { create :product_characteristic, :product => product1, :characteristic => characteristic1 , :value => "1" }
+    let!(:product_characteristic2) { create :product_characteristic, :product => product1, :characteristic => characteristic2 , :value => "2" }
+    let!(:product_characteristic3) { create :product_characteristic, :product => product2, :characteristic => characteristic1 , :value => "1" }
+    let!(:product_characteristic4) { create :product_characteristic, :product => product3 }
+
+    context "when product has characteristic and value" do
+      subject { Product.list(characteristic1.id,"1") }
+      
+      it { should include(product1) }
+      
+      it { should include(product2) }
+    
+      it { should_not include(product3) }
+
+      it { should have(2).products }
     end
 
-    it "when product has characteristic and hasn't value" do
-      Product.list(1,nil,1).count.should eq(2)
+    context "when product has characteristic and hasn't value" do
+      subject { Product.list(characteristic1.id) }
+      
+      it { should include(product1) }
+      
+      it { should include(product2) }
+    
+      it { should_not include(product3) }
+
+      it { should have(2).products }
     end
 
-    it "when product hasn't caharacteristic and hasn't value, or hasn't only characteristic" do
-      Product.list(nil,nil,1).count.should eq(3)   
+    context "when product hasn't caharacteristic and hasn't value, or hasn't only characteristic" do
+      subject { Product.list }
+      
+      it { should include(product1) }
+      
+      it { should include(product2) }
+    
+      it { should include(product3) }
+
+      it { should have(3).products }
     end
 
   end
-    
+
   describe "#update_characteristics" do
     let(:new_characteristics) { { 1 => "a", 2 => "b", 3 => "" } }
 
