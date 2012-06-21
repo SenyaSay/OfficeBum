@@ -74,6 +74,13 @@ li {
     padding: 0 20px;
 }
 
+#contentBlocks {
+    float: left;
+    width: 33%;
+    height: 90px;
+    text-align: center;
+}
+
 /* Sidebar Left
 -----------------------------------------------------------------------------*/
 #sideLeft {
