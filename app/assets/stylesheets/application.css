@@ -74,13 +74,6 @@ li {
     padding: 0 20px;
 }
 
-#contentBlocks {
-    float: left;
-    width: 33%;
-    height: 90px;
-    text-align: center;
-}
-
 /* Sidebar Left
 -----------------------------------------------------------------------------*/
 #sideLeft {
@@ -107,3 +100,13 @@ li {
     height: 100px;
     background: #BFF08E;
 }
+
+
+/* Product/index */
+.contentBlocks {
+    display: inline-block;
+    width: 30%;
+    height: 90px;
+    text-align: center;
+}
+

@@ -11,7 +11,7 @@
 <% end %>
 
 <% @products.each do |product| %> 
-  <div id="contentBlocks">
+  <div class="contentBlocks">
     <%= image_tag(product.image_url(:thumb)) if product.image? %><br />
     <%= product.name %> 
   </div>  
