@@ -15,4 +15,9 @@ FactoryGirl.define do
     characteristic 
     value "10"
   end
+
+  factory :admin do
+    email "vasya@gmail.com"
+    password "vasyasobaka"
+  end
 end

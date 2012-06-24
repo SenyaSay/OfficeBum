@@ -13,8 +13,8 @@ class Admin::ProductsController < Admin::BaseController
 
   def create
     @product = Product.new(params[:product])
-    if @product.save
-      @product.update_characteristics @characteristic_params
+    if  @product.save
+      @product.update_characteristics @characteristic_params if @characteristic_params
       redirect_to :action => :index
     else
       flash[:error] = @product.errors.full_messages
