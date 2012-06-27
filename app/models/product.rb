@@ -11,7 +11,7 @@ class Product < ActiveRecord::Base
 
   scope :with_characteristic, (lambda do |characteristic, value|
     options = { :characteristic_id => characteristic }
-    options.merge({ :value => value }) if value
+    options.merge!({ :value => value }) if value
     joins(:product_characteristics).where(:product_characteristics => options )
   end)
 

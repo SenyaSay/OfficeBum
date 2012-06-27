@@ -1,0 +1,38 @@
+<p>
+  <b>Name: </b>
+  <%= @product.name %>
+</p>
+
+<p>
+  <b> Price: </b>
+  <%= @product.price %>
+</p>
+
+<p>
+  <b> Description: </b>
+  <%= @product.description %>
+</p>
+
+<p>
+  <%= image_tag(@product.image_url(:big_thumb)) %>
+</p>
+
+<p><%= "Box"%></p>
+
+<p><b> Characteristics: </b></p>
+<div class='characteristics'>
+  <table>
+    <tr>
+      <th> Name </th>
+      <th> Value </th>
+    </tr>
+  <% @characteristics.each do |characteristic|%>
+    <tr>
+     <td><%= characteristic.name if @product.characteristic_value(characteristic) %></td>
+     <td><%= @product.characteristic_value(characteristic) %></td>
+    </tr>
+  <% end %>
+  </table>
+</div>
+
+<%= link_to 'Back', root_path %>

@@ -57,7 +57,7 @@ describe Admin::ProductsController do
         expect { post :create, :product => {:name => "3r3"} }.to change { Product.count }.by(1)
       end
 
-      it "should " do
+      it "should receive characteristics" do
         Product.any_instance.should_receive(:update_characteristics).with("name" => "name")
         post :create, :product => {:name => "12", :product_characteristics => {:name => "name"}}
       end

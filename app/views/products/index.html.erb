@@ -12,8 +12,11 @@
 
 <% @products.each do |product| %> 
   <div class="contentBlocks">
-    <%= image_tag(product.image_url(:thumb)) if product.image? %><br />
-    <%= product.name %> 
+    <div>
+      <%= image_tag(product.image_url(:thumb)) if product.image? %><br />
+      <%= link_to product.name, product_path(product) %> 
+    </div>
+    <p>Price: <%= product.price %> Box</p>
   </div>  
 <% end %>
 <%= paginate @products %>

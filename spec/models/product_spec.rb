@@ -16,18 +16,18 @@ describe Product do
     let!(:product_characteristic1) { create :product_characteristic, :product => product1, :characteristic => characteristic1 , :value => "1" }
     let!(:product_characteristic2) { create :product_characteristic, :product => product1, :characteristic => characteristic2 , :value => "2" }
     let!(:product_characteristic3) { create :product_characteristic, :product => product2, :characteristic => characteristic1 , :value => "1" }
-    let!(:product_characteristic4) { create :product_characteristic, :product => product3 }
+    let!(:product_characteristic4) { create :product_characteristic }
 
     context "when product has characteristic and value" do
-      subject { Product.list(characteristic1.id,"1") }
+      subject { Product.list(characteristic2.id,"2") }
       
       it { should include(product1) }
       
-      it { should include(product2) }
+      it { should_not include(product2) }
     
       it { should_not include(product3) }
 
-      it { should have(2).products }
+      it { should have(1).products }
     end
 
     context "when product has characteristic and hasn't value" do
