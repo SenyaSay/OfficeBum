@@ -49,7 +49,7 @@ describe Admin::ProductsController do
   describe :create do
     context "when product was save" do
       it "should be redirected" do
-        post :create, :product => {:name => "3r3"}
+        post :create, :product => { :name => "3r3" } 
         response.should redirect_to(:action => :index)
       end
 
@@ -59,7 +59,7 @@ describe Admin::ProductsController do
 
       it "should receive characteristics" do
         Product.any_instance.should_receive(:update_characteristics).with("name" => "name")
-        post :create, :product => {:name => "12", :product_characteristics => {:name => "name"}}
+        post :create, :product => { :name => "12", :product_characteristics => {:name => "name"} }
       end
     end
 
@@ -69,5 +69,75 @@ describe Admin::ProductsController do
         response.should render_template(:new)
       end
     end
+  end
+
+  describe :show do
+    let(:product1){ create :product }   
+
+    it "should be success" do
+      get :show, {:id => product1.id}
+      response.should be_success
+    end
+
+    it "should render show" do
+      get :show, {:id => product1.id}
+      response.should render_template(:show)
+    end
+
+    it "should set @product" do
+      get :show, {:id => product1.id}
+      assigns[:product].should_not be_nil
+    end
+  end
+
+  describe :edit do
+    let(:product1){ create :product }
+
+    it "should be success" do
+      get :edit, { :id => product1.id }
+      response.should be_success
+    end
+
+    it "should render show" do
+      get :edit, { :id => product1.id }
+      response.should render_template(:edit)
+    end
+
+    it "should set @product" do
+      get :edit, { :id => product1.id }
+      assigns[:product].should_not be_nil
+    end
+  end
+  
+  describe :update do
+   let(:product1){ create :product, :name => "qqq" } 
+   let(:characteristic1){ create :characteristic }
+   it "should update attributes" do
+     put :update, :id => product1.id, :product => { :name => "eww" }
+     product1.reload
+     product1.name.should eq("eww")
+   end
+
+   it "should " do
+     expect { put :update, :id => product1.id, :product => { :product_characteristics => { characteristic1.id => "rot"} } }.to change{ product1.characteristics.count }.by(1)
+   end
+  end
+ 
+  describe :destroy do
+    let!(:product1){ create :product }
+
+    it "should " do
+      expect { delete :destroy, { :id => product1.id } }.to change{ Product.count }.by(-1)
+    end
+
+    it "should render index" do
+      delete :destroy, { :id => product1.id }
+      response.should redirect_to(:action => :index)
+    end
+   
+   it "should" do
+     delete :destroy, { :id => product1.id }
+     Product.find_by_id(product1.id).should be_nil
+   end
   end
 end

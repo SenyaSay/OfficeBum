@@ -32,7 +32,7 @@ class Admin::ProductsController < Admin::BaseController
 
   def update
     if @product.update_attributes(params[:product])
-      @product.update_characteristics @characteristic_params
+      @product.update_characteristics @characteristic_params if @characteristic_params
       redirect_to :action => :index
     else
       flash[:error] = @product.errors.full_messages

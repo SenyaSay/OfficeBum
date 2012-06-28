@@ -12,10 +12,12 @@
 
 <% @products.each do |product| %> 
   <div class="contentBlocks">
+    <%= link_to( raw("
     <div>
-      <%= image_tag(product.image_url(:thumb)) if product.image? %><br />
-      <%= link_to product.name, product_path(product) %> 
+      #{image_tag(product.image_url(:thumb)) if product.image?}<br />
+      #{product.name}
     </div>
+    "), product_path(product))%>
     <p>Price: <%= product.price %> Box</p>
   </div>  
 <% end %>

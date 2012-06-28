@@ -22,6 +22,6 @@ class ProductsController < ApplicationController
   end
 
   def find_characteristics
-    @characteristics = Characteristic.all
+    @characteristics = @product.characteristics
   end
 end

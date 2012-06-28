@@ -28,7 +28,7 @@
     </tr>
   <% @characteristics.each do |characteristic|%>
     <tr>
-     <td><%= characteristic.name if @product.characteristic_value(characteristic) %></td>
+     <td><%= characteristic.name %></td>
      <td><%= @product.characteristic_value(characteristic) %></td>
     </tr>
   <% end %>
