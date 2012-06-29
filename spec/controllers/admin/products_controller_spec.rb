@@ -98,7 +98,7 @@ describe Admin::ProductsController do
       response.should be_success
     end
 
-    it "should render show" do
+    it "should render edit" do
       get :edit, { :id => product1.id }
       response.should render_template(:edit)
     end
@@ -118,7 +118,7 @@ describe Admin::ProductsController do
      product1.name.should eq("eww")
    end
 
-   it "should " do
+   it "should increase" do
      expect { put :update, :id => product1.id, :product => { :product_characteristics => { characteristic1.id => "rot"} } }.to change{ product1.characteristics.count }.by(1)
    end
   end
@@ -126,7 +126,7 @@ describe Admin::ProductsController do
   describe :destroy do
     let!(:product1){ create :product }
 
-    it "should " do
+    it "should delete" do
       expect { delete :destroy, { :id => product1.id } }.to change{ Product.count }.by(-1)
     end
 
@@ -135,7 +135,7 @@ describe Admin::ProductsController do
       response.should redirect_to(:action => :index)
     end
    
-   it "should" do
+   it "should be nil" do
      delete :destroy, { :id => product1.id }
      Product.find_by_id(product1.id).should be_nil
    end
