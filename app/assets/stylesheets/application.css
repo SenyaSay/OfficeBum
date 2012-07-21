@@ -94,6 +94,20 @@ li {
     background: #FFACAA;
 }
 
+#sign_in {
+    margin-left: 10px;
+}
+
+#sign_in input[type="text"],
+#sign_in input[type="password"]{
+    width: 180px;
+    display: block;
+}
+
+#sign_in input[type="submit"] {
+    display: block;
+}
+
 /* Footer
 -----------------------------------------------------------------------------*/
 #footer {

@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  layout 'store'
+
   before_filter :build_menu
   before_filter :find_product, :only => [:show]
   before_filter :find_characteristics, :only => [:show]

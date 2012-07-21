@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OfficeBum</title>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="wrapper">
+  <div id="header">
+    Header
+  </div>
+
+  <div id="middle">
+    <div id="container">
+      <div id="content"><%= yield %></div>
+    </div>
+    <div class="sidebar" id="sideLeft"><%= yield :side_left %></div>
+    <div class="sidebar" id="sideRight">
+      <%= render '/layouts/sign_in_part' %>
+      <%= yield :side_right %>
+    </div>
+  </div>
+
+  <div id="footer">
+    Footer
+  </div>
+</div>
+</body>
+</html>
