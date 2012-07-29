@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120721124713) do
+ActiveRecord::Schema.define(:version => 20120729082146) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -36,6 +36,22 @@ ActiveRecord::Schema.define(:version => 20120721124713) do
     t.integer  "level"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "order_products", :force => true do |t|
+    t.integer  "order_id",                                                :null => false
+    t.integer  "product_id",                                              :null => false
+    t.integer  "quantity",                                 :default => 1
+    t.decimal  "price",      :precision => 8, :scale => 2
+    t.datetime "created_at",                                              :null => false
+    t.datetime "updated_at",                                              :null => false
+  end
+
+  create_table "orders", :force => true do |t|
+    t.integer  "user_id",                                                             :null => false
+    t.enum     "status",     :limit => [:reserved, :cancelled, :purchased, :deleted], :null => false
+    t.datetime "created_at",                                                          :null => false
+    t.datetime "updated_at",                                                          :null => false
   end
 
   create_table "product_characteristics", :force => true do |t|

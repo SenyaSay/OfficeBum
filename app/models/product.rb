@@ -4,6 +4,8 @@ class Product < ActiveRecord::Base
 
   has_many :product_characteristics
   has_many :characteristics, :through => :product_characteristics
+  has_many :order_products
+  has_many :orders, :through => :order_products
 
   validates :name, :presence => true
 
