@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
   before_filter :build_menu
   before_filter :find_product, :only => [:show]
   before_filter :find_characteristics, :only => [:show]
+  before_filter :build_cart
 
   def index
     @products = Product.list(params[:top], params[:value], params[:page])
@@ -25,5 +26,9 @@ class ProductsController < ApplicationController
 
   def find_characteristics
     @characteristics = @product.characteristics
+  end
+
+  def build_cart
+    @cart = cookies[:cart] || {}
   end
 end

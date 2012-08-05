@@ -1,3 +1,7 @@
+<% content_for :side_right do %>
+    <%= render 'cart' %>
+<% end %>
+
 <p>
   <b>Name: </b>
   <%= @product.name %>
@@ -17,7 +21,7 @@
   <%= image_tag(@product.image_url(:big_thumb)) %>
 </p>
 
-<p><%= "Box"%></p>
+<p><%= link_to "Box", cart_path(:id => @product.id), :method => :put, :remote => true %></p>
 
 <p><b> Characteristics: </b></p>
 <div class='characteristics'>

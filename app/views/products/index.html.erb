@@ -7,7 +7,7 @@
 <% end %>
 
 <% content_for :side_right do %>
-    Here should be placed next parts: top products, login form, and third part
+    <%= render 'cart' %>
 <% end %>
 
 <% @products.each do |product| %> 
@@ -18,7 +18,10 @@
       #{product.name}
     </div>
     "), product_path(product))%>
-    <p>Price: <%= product.price %> Box</p>
+    <p>
+      Price: <%= product.price %>
+      <%= link_to "Box", cart_path(:id => product.id), :method => :put, :remote => true %>
+    </p>
   </div>  
 <% end %>
 <%= paginate @products %>
