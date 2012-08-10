@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
   before_filter :build_menu
   before_filter :find_product, :only => [:show]
   before_filter :find_characteristics, :only => [:show]
+  before_filter :build_cart_cookies
   before_filter :build_cart
 
   def index
@@ -29,6 +30,10 @@ class ProductsController < ApplicationController
   end
 
   def build_cart
-    @cart = cookies[:cart] || {}
+    @cart = Cart.build(@cart_cookies)
+  end
+
+  def build_cart_cookies
+    @cart_cookies = cookies[:cart] ? Marshal.load(cookies[:cart]) : {}
   end
 end
