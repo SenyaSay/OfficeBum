@@ -30,7 +30,7 @@ class ProductsController < ApplicationController
   end
 
   def build_cart
-    @cart = Cart.build(@cart_cookies)
+    @cart = Cart.new(@cart_cookies)
   end
 
   def build_cart_cookies

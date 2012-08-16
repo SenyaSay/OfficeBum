@@ -3,12 +3,12 @@ class CartsController < ApplicationController
 
   def update
     cookies[:cart] = {:value => Marshal.dump(@cart_cookies)}
-    @cart = Cart.build(@cart_cookies)
+    @cart = Cart.new(@cart_cookies)
   end
 
   def destroy
     cookies.delete :cart
-    @cart = Cart.build
+    @cart = Cart.new
   end
 
   private

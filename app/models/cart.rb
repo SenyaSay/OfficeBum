@@ -1,12 +1,17 @@
 class Cart
+  attr_reader :items
 
-  def self.build(cart_cookies)
-    new_hash = {}
+  def initialize(cart_cookies = {})
+    @items = {}
     cart_cookies.each do |key, value|
       product = Product.find(key)
-      new_hash.merge!(product.name => [value, product.price])
+      @items.merge!(product.name => [value, product.price])
     end
-    new_hash
+  end
+
+  def total_price
+    @items.inject(0) { |result, (_, value)| result + value[0]*value[1] }
   end
 
 end
+
