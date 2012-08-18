@@ -1,0 +1,24 @@
+#cart {
+    position: absolute;
+    bottom: 0;
+    right:20px;
+    background-color: #B5E3FF;
+    padding: 10px;
+    width: 190px;
+}
+
+#cart .total_line {
+    font-weight: bold;
+}
+
+#cart .price {
+    text-align: right;
+}
+
+#cart .name {
+    width: 100px;
+}
+
+#cart .quantity {
+    width: 30px;
+}

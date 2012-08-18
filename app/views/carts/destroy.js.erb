@@ -1,1 +1,1 @@
-$( "#cart" ).html( "<%= escape_javascript(render('products/cart')) %>" );
+$( "#cart" ).replaceWith( "<%= escape_javascript(render('products/cart')) %>" );

@@ -6,10 +6,6 @@
     </ul>
 <% end %>
 
-<% content_for :side_right do %>
-    <%= render 'cart' %>
-<% end %>
-
 <% @products.each do |product| %> 
   <div class="contentBlocks">
     <%= link_to( raw("

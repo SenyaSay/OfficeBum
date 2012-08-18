@@ -37,6 +37,7 @@ li {
 #wrapper {
     width: 1000px;
     margin: 0 auto;
+    position: relative;
 }
 
 /* Header
@@ -106,19 +107,6 @@ li {
 
 #sign_in input[type="submit"] {
     display: block;
-}
-
-#cart, #cart table{
-  display: block;
-  margin-left: 10px;
-}
-
-#cart .price{
-  text-align: right;
-}
-
-#cart .total_line {
-  font-weight: bold;
 }
 
 /* Footer

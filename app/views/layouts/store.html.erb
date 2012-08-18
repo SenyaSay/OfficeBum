@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>OfficeBum</title>
-  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= stylesheet_link_tag "application", "cart", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
@@ -22,7 +22,7 @@
       <%= yield :side_right %>
     </div>
   </div>
-
+  <%= render 'cart' %>
   <div id="footer">
     Footer
   </div>
