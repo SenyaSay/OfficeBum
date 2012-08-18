@@ -1,4 +1,5 @@
 <div id="cart">
+  <h3>Cart</h3>
   <table>
     <% @cart.items.each do |key, value| %>
       <tr>
@@ -12,7 +13,7 @@
       <td class="price"><%= @cart.total_price %></td>
     </tr>
   </table>
-  <div id="destroy">
+  <div>
     <%= link_to "Empty cart", cart_path, :method => :delete, :remote => true %>
   </div>
 </div>
