@@ -14,7 +14,6 @@ gem 'enum_column3', '0.1.4'
 
 group :development do
   gem 'parallel_tests', '0.8.2'
-  gem 'unicorn', '4.3.1'
 end
 
 group :test do
@@ -39,6 +38,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'unicorn', '4.3.1'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
