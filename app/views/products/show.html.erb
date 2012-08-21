@@ -17,7 +17,7 @@
   <%= image_tag(@product.image_url(:big_thumb)) %>
 </p>
 
-<p><%= link_to image_tag("cart.jpg"), cart_path(:id => @product.id), :method => :put, :remote => true %></p>
+<p><%= link_to image_tag("/assets/cart.jpg"), cart_path(:id => @product.id), :method => :put, :remote => true %></p>
 
 <p><b> Characteristics: </b></p>
 <div class='characteristics'>

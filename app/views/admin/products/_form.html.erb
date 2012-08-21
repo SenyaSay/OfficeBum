@@ -10,7 +10,7 @@
         <%= f.text_area :description %> <br />
         Add image:
         <%= f.file_field :image %>
-        <%= image_tag (@product.image_url(:thumb) || ''), :name => "preview", :id => "preview", :size => "50x50" %>
+        <%= image_tag (@product.image_url(:thumb) || '/assets/cart.jpg'), :name => "preview", :id => "preview", :size => "50x50" %>
       </p>
     </div>
 
