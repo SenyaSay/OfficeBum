@@ -2,8 +2,8 @@ class CartsController < ApplicationController
   before_filter :build_cart_cookies, :only => :update
 
   def update
-    cookies[:cart] = {:value => Marshal.dump(@cart_cookies)}
     @cart = Cart.new(@cart_cookies)
+    cookies[:cart] = {:value => Marshal.dump(@cart.to_cookies)}
   end
 
   def destroy
@@ -26,6 +26,6 @@ class CartsController < ApplicationController
     id = params[:id]
     return unless id
     @cart_cookies.merge!(id =>  @cart_cookies[id] ? @cart_cookies[id].next : 1)
-
   end
 end
+
