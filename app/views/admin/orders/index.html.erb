@@ -1,0 +1,19 @@
+<h1> Orders </h1>
+
+<table>
+  <tr> 
+    <th> User </th>
+    <th> Status </th>
+    <th> Description </th>
+  </tr>
+<% @orders.each do |order| %>
+  <tr>
+    <td> <%= order.user_email(order.user_id) %> </td>
+    <td> <%= order.status %> </td>
+    <td> <%= order.description %> </td>
+  </tr>	
+<% end %>
+</table>
+<%= paginate @orders %>
+<%= link_to('Back to admin panel', admin_root_path) %>
+
