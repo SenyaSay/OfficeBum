@@ -1,0 +1,14 @@
+<%= form_for @order, :url => { :action => "update" } do |f| %>
+
+<p> User: 
+  <%= @order.user_email(@order.user_id) %> <br />
+  Status:
+  <%= f.select :status, Order::STATUS.map{ |key, value| [key, value]} %> <br />
+  Description:
+  <%= @order.description %> </p>
+<div>
+  <%= f.submit "Edit" %>
+</div>
+<% end %>
+
+<%= link_to('Back to orders', admin_orders_path) %>
