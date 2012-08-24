@@ -10,7 +10,7 @@ class Order < ActiveRecord::Base
   STATUS = ["reserved", "cancelled", "purchased", "deleted" ]
 
   def total_price
-    self.order_products.inject(0){ |result, product| result + product.quantity*product.price }
+    self.order_products.sum{ |product| product.quantity*product.price }
   end
 
 end
