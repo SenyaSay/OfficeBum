@@ -4,6 +4,7 @@
   <tr> 
     <th> User </th>
     <th> Products </th>
+    <th> Total price </th>
     <th> Status </th>
     <th> Description </th>
     <th></th>
@@ -12,6 +13,7 @@
   <tr>
     <td> <%= order.user.email %> </td>
     <td> <%= products(order.order_products) %> </td>
+    <td> <%= order.total_price %> </td>
     <td> <%= order.status %> </td>
     <td> <%= order.description %> </td>
     <td> <%= link_to 'Edit', edit_admin_order_path(order) %> </td>
