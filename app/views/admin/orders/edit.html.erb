@@ -1,9 +1,9 @@
 <%= form_for @order, :url => { :action => "update" } do |f| %>
 
 <p> User: 
-  <%= @order.user_email(@order.user_id) %> <br />
+  <%= @order.user.email %> <br />
   Status:
-  <%= f.select :status, Order::STATUS.map{ |key, value| [key, value]} %> <br />
+  <%= f.select :status, status %> <br />
   Description:
   <%= @order.description %> </p>
 <div>

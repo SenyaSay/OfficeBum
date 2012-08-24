@@ -9,7 +9,7 @@
   </tr>
 <% @orders.each do |order| %>
   <tr>
-    <td> <%= order.user_email(order.user_id) %> </td>
+    <td> <%= order.user.email %> </td>
     <td> <%= order.status %> </td>
     <td> <%= order.description %> </td>
     <td> <%= link_to 'Edit', edit_admin_order_path(order) %> </td>
