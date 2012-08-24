@@ -3,7 +3,7 @@
 <p> User: 
   <%= @order.user.email %> <br />
   Status:
-  <%= f.select :status, status %> <br />
+  <%= f.select :status, Order::STATUS %> <br />
   Description:
   <%= @order.description %> </p>
 <div>

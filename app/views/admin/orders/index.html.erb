@@ -11,7 +11,7 @@
 <% @orders.each do |order| %>
   <tr>
     <td> <%= order.user.email %> </td>
-    <td> <%= cart(order.order_products) %> </td>
+    <td> <%= products(order.order_products) %> </td>
     <td> <%= order.status %> </td>
     <td> <%= order.description %> </td>
     <td> <%= link_to 'Edit', edit_admin_order_path(order) %> </td>
