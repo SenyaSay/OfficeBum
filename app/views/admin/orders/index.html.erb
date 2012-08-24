@@ -3,6 +3,7 @@
 <table>
   <tr> 
     <th> User </th>
+    <th> Products </th>
     <th> Status </th>
     <th> Description </th>
     <th></th>
@@ -10,6 +11,7 @@
 <% @orders.each do |order| %>
   <tr>
     <td> <%= order.user.email %> </td>
+    <td> <%= cart(order.order_products) %> </td>
     <td> <%= order.status %> </td>
     <td> <%= order.description %> </td>
     <td> <%= link_to 'Edit', edit_admin_order_path(order) %> </td>
