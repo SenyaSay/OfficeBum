@@ -14,12 +14,13 @@
     <td> <%= order.user.email %> </td>
     <td> <%= products(order.order_products) %> </td>
     <td> <%= order.total_price %> </td>
-    <td> <%= order.status %> </td>
+    <td class="select" id="<%= order.id %>"> <%= select :status, nil, Order::STATUS, {:selected => order.status} %> </td>
     <td> <%= order.description %> </td>
-    <td> <%= link_to 'Edit', edit_admin_order_path(order) %> </td>
-  </tr>	
+    <td> <%= link_to 'Delete', admin_order_path(order), :method => :delete %> </td>
+  </tr>
 <% end %>
 </table>
 <%= paginate @orders %>
+
 <%= link_to('Back to admin panel', admin_root_path) %>
 

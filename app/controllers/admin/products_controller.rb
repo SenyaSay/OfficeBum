@@ -43,7 +43,7 @@ class Admin::ProductsController < Admin::BaseController
   def destroy
     @product.destroy
     redirect_to :action => :index
-  end		
+  end
 
   private
 

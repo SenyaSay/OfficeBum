@@ -7,10 +7,10 @@ class Order < ActiveRecord::Base
   validates :status, :inclusion => [:reserved, :cancelled, :purchased, :deleted], :presence => true
   validates :user, :presence => true
 
-  STATUS = ["reserved", "cancelled", "purchased", "deleted" ]
+  STATUS = %w(reserved cancelled purchased deleted)
 
   def total_price
-    self.order_products.sum{ |product| product.quantity*product.price }
+    order_products.sum{ |product| product.quantity*product.price }
   end
 
 end
