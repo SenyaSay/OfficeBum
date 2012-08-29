@@ -2,7 +2,7 @@ class Admin::OrdersController < ApplicationController
   before_filter :find_order, :only => [:update, :destroy]
 
   def index
-    @orders = Order.page(params[:page]).per(20)
+    @orders = Order.includes(:user, :order_products => :product).page(params[:page]).per(20)
   end
 
   def update
