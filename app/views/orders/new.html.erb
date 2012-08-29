@@ -1,5 +1,8 @@
-<div id="cart">
-  <h3>Cart</h3>
+<%= form_for @order, :url => { :action => "create" } do |f| %>
+<h3> Order </h3>
+
+<p>
+  User: <%= current_user.email %> <br />
   <table>
     <% @cart.products.each do |key, value| %>
       <tr>
@@ -13,10 +16,12 @@
       <td class="price"><%= @cart.total_price %></td>
     </tr>
   </table>
-  <div>
-    <%= link_to "Empty cart", cart_path, :method => :delete, :remote => true %>
-  </div>
-  <div>
-    <%= link_to "Checkout", new_order_path %>
-  </div>
+  Description: <br />
+  <%= f.text_area :description %>
+</p>
+<div>
+  <%= f.submit "Add order" %>
 </div>
+<% end %>
+
+<%= link_to('Back', root_url) %>
