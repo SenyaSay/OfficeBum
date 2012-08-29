@@ -1,9 +1,9 @@
 <table>
-  <% @cart.products.each do |key, value| %>
+  <% @cart.products.each do |product, quantity| %>
     <tr>
-      <td class="name"><%= key %>:</td>
-      <td class="quantity"><%= value[0] %> x</td>
-      <td class="price" ><%= value[1] %></td>
+      <td class="name"><%= product.name %>:</td>
+      <td class="quantity"><%= quantity %> x</td>
+      <td class="price" ><%= product.price %></td>
     </tr>
   <% end %>
   <tr class="total_line" >
