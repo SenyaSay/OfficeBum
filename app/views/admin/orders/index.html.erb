@@ -1,6 +1,6 @@
 <h1> Orders </h1>
 
-<table>
+<table class="orders">
   <tr> 
     <th> User </th>
     <th> Products </th>
@@ -14,7 +14,7 @@
     <td> <%= order.user.email %> </td>
     <td> <%= products(order.order_products) %> </td>
     <td> <%= order.total_price %> </td>
-    <td class="select" id="<%= order.id %>"> <%= select :status, nil, Order::STATUS, {:selected => order.status} %> </td>
+    <td> <%= select :status, nil, Order::STATUS, { selected: order.status }, { id: order.id } %> </td>
     <td> <%= order.description %> </td>
     <td> <%= link_to 'Delete', admin_order_path(order), :method => :delete %> </td>
   </tr>

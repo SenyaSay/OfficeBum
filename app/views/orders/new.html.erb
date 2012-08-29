@@ -1,27 +1,16 @@
-<%= form_for @order, :url => { :action => "create" } do |f| %>
 <h3> Order </h3>
 
+User: <%= current_user.email %> <br />
+<%= render "/products/cart_data" %>
+
+<%= form_for @order, :url => { :action => "create" } do |f| %>
 <p>
-  User: <%= current_user.email %> <br />
-  <table>
-    <% @cart.products.each do |key, value| %>
-      <tr>
-        <td class="name"><%= key %>:</td>
-        <td class="quantity"><%= value[0] %> x</td>
-        <td class="price" ><%= value[1] %></td>
-      </tr>
-    <% end %>
-    <tr class="total_line" >
-      <td colspan="2" >Total</td>
-      <td class="price"><%= @cart.total_price %></td>
-    </tr>
-  </table>
-  Description: <br />
+  Contact info: <br />
   <%= f.text_area :description %>
 </p>
 <div>
-  <%= f.submit "Add order" %>
+  <%= f.submit "Create order" %>
 </div>
 <% end %>
 
-<%= link_to('Back', root_url) %>
+<%= link_to('To catalog', root_url) %>

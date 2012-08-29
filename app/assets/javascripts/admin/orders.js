@@ -1,9 +1,8 @@
 $(function (){
 
-  $(".select").change(function() {
+  $(".orders select").change(function() {
     var id = $(this).attr("id");
-    var select = $(this).find("select");
-    var value = select.val();
+    var value = $(this).val();
     $.ajax({
       type: "PUT",
       url: "/admin/orders/"+id,

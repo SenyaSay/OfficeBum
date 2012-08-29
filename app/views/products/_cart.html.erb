@@ -1,18 +1,6 @@
 <div id="cart">
   <h3>Cart</h3>
-  <table>
-    <% @cart.products.each do |key, value| %>
-      <tr>
-        <td class="name"><%= key %>:</td>
-        <td class="quantity"><%= value[0] %> x</td>
-        <td class="price" ><%= value[1] %></td>
-      </tr>
-    <% end %>
-    <tr class="total_line" >
-      <td colspan="2" >Total</td>
-      <td class="price"><%= @cart.total_price %></td>
-    </tr>
-  </table>
+  <%= render "/products/cart_data" %>
   <div>
     <%= link_to "Empty cart", cart_path, :method => :delete, :remote => true %>
   </div>
