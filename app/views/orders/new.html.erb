@@ -1,9 +1,10 @@
 <h3> Order </h3>
 
-User: <%= current_user.email %> <br />
+User: <%= current_user.try(:email) %> <br />
 <%= render "/products/cart_data" %>
 
 <%= form_for @order, :url => { :action => "create" } do |f| %>
+<span class="error"><%= @order.errors.full_messages.join(" and ") %></span>
 <p>
   Contact info: <br />
   <%= f.text_area :description %>

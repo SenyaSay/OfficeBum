@@ -5,7 +5,8 @@ class Order < ActiveRecord::Base
   has_many :products, :through => :order_products
 
   validates :status, :inclusion => [:reserved, :cancelled, :purchased, :deleted], :presence => true
-  validates :user, :presence => true
+  validate :presence_user_or_description
+  validate :presence_products
 
   STATUS = %w(reserved cancelled purchased deleted)
 
@@ -25,6 +26,16 @@ class Order < ActiveRecord::Base
                            quantity: quantity,
                            price: product.price)
     end
+  end
+
+  private
+
+  def presence_user_or_description
+    errors.add(:base, "Please login or leave your details in the description") unless (user || description.present?)
+  end
+
+  def presence_products
+    errors.add(:base, "Order should have at least one product") if order_products.empty?
   end
 
 

@@ -40,6 +40,11 @@ li {
     position: relative;
 }
 
+.error {
+    color: red;
+    font-weight: bold;
+}
+
 /* Header
 -----------------------------------------------------------------------------*/
 #header {
