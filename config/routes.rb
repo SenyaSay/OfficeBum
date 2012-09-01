@@ -53,7 +53,8 @@ OfficeBum::Application.routes.draw do
   namespace :admin do
     root :to => 'dashboard#index'
     resources :products
-		resources :characteristics
+    resources :characteristics
+    resources :orders, :only => [:index, :update, :destroy]
   end
 
   # You can have the root of your site routed with "root"
@@ -61,6 +62,7 @@ OfficeBum::Application.routes.draw do
   root :to => 'products#index'
   resources :products, :only => [:index, :show]
   resource :cart, :only => [:update, :destroy]
+  resources :orders, :only => [:create, :new, :index]
 
   # See how all your routes lay out with "rake routes"
 

@@ -9,7 +9,7 @@ class Cart
   end
 
   def total_price
-    @products.inject(0) { |result, (_, value)| result + value[0]*value[1] }
+    @products.inject(0) { |result, (product, quantity)| result + quantity*product.price }
   end
 
   private
@@ -18,7 +18,7 @@ class Cart
     @cart_cookies.each do |key, value|
       product = Product.find_by_id(key)
       if product
-        @products.merge!(product.name => [value, product.price])
+        @products.merge!(product => value)
         @to_cookies.merge!(key => value)
       end
     end

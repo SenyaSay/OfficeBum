@@ -1,0 +1,25 @@
+<h1> Orders </h1>
+
+<table class="orders">
+  <tr> 
+    <th> User </th>
+    <th> Products </th>
+    <th> Total price </th>
+    <th> Status </th>
+    <th> Description </th>
+    <th></th>
+  </tr>
+<% @orders.each do |order| %>
+  <tr>
+    <td> <%= order.user.email %> </td>
+    <td> <%= products(order.order_products) %> </td>
+    <td> <%= order.total_price %> </td>
+    <td> <%= order.status %> </td>
+    <td> <%= order.description %> </td>
+  </tr>
+<% end %>
+</table>
+<%= paginate @orders %>
+
+<%= link_to('Back to store', root_url) %>
+

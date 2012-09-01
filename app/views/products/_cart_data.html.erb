@@ -1,0 +1,13 @@
+<table>
+  <% @cart.products.each do |product, quantity| %>
+    <tr>
+      <td class="name"><%= product.name %>:</td>
+      <td class="quantity"><%= quantity %> x</td>
+      <td class="price" ><%= product.price %></td>
+    </tr>
+  <% end %>
+  <tr class="total_line" >
+    <td colspan="2" >Total</td>
+    <td class="price"><%= @cart.total_price %></td>
+  </tr>
+</table>
