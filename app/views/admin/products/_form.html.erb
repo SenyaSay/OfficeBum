@@ -4,6 +4,8 @@
       <p>
         Product name:
         <%= f.text_field :name %> <br />
+        Category:
+        <%= f.select(:category_id, categoty_options(@category)) %> <br />
         Price:
         <%= f.text_field :price %> <br />
         Description:

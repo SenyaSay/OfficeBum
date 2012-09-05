@@ -4,6 +4,11 @@
 </p>
 
 <p>
+  <b> Category: </b>
+  <%= @product.category.try(:name) %>
+</p>
+
+<p>
   <b> Price: </b>
   <%= @product.price %>
 </p>

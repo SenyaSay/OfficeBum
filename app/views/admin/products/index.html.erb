@@ -3,6 +3,7 @@
 <table>
   <tr> 
     <th> Name </th>
+    <th> Category </th>
     <th> Price </th>
     <th> Description </th>
     <th> Image </th>
@@ -13,6 +14,7 @@
 <% @products.each do |product| %>
   <tr>
     <td> <%= product.name %> </td>
+    <td> <%= product.category.try(:name) %> </td>
     <td> <%= product.price %> </td>
     <td> <%= product.description %> </td>
     <td> <%= image_tag(product.image_url(:thumb)) if product.image? %> </td>

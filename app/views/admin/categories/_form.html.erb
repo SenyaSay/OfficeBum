@@ -1,4 +1,4 @@
-<%= form_for @category, :url => { :action => action }, :html => { :multipart => true } do |f| %>
+<%= form_for @category, :url => { :action => action } do |f| %>
     <h3><%= flash[:error] %></h3>
 
     <p>
@@ -7,7 +7,7 @@
     </p>
     <p>
       <%= f.label :parent_id %><br/>
-      <%= f.select(:parent_id, [''] + nested_set_options(Category, @category) {|i| "#{'-' * i.level} #{i.name}" }) %>
+      <%= f.select(:parent_id, categoty_options(@category)) %>
     </p>
 
     <p>
