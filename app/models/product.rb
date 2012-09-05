@@ -1,7 +1,8 @@
 class Product < ActiveRecord::Base
-  attr_accessible :name, :price, :description, :image
+  attr_accessible :name, :price, :description, :image, :category, :category_id
   mount_uploader :image, ImageUploader
 
+  belongs_to :category
   has_many :product_characteristics
   has_many :characteristics, :through => :product_characteristics
   has_many :order_products

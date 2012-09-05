@@ -5,7 +5,7 @@ describe Product do
   let(:characteristic) { create :characteristic }
 
   describe "#list" do
-   
+
     let(:product1) { create :product }
     let(:product2) { create :product }
     let(:product3) { create :product }
