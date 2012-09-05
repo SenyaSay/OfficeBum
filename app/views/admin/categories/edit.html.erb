@@ -1,18 +1,3 @@
 <h3>Edit category</h3>
-<%= form_for @category, :url => { :action => "update" } do |f| %>
-    <h3><%= flash[:error] %></h3>
-
-    <p>
-      <%= f.label :name %><br/>
-      <%= f.text_field :name %>
-    </p>
-    <p>
-      <%= f.label :parent_id %><br/>
-      <%= f.select(:parent_id, [''] + nested_set_options(Category, @category) {|i| "#{'-' * i.level} #{i.name}" }) %>
-    </p>
-
-    <p>
-      <%= f.submit 'Submit' %>
-    </p>
-<% end %>
+<%= render 'form', :action => 'update' %>
 <%= link_to 'Back to categories', admin_categories_path %>
