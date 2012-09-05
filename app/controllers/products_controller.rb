@@ -1,9 +1,9 @@
 class ProductsController < ApplicationController
   layout 'store'
 
-  before_filter :build_menu
-  before_filter :find_product, :only => [:show]
-  before_filter :find_characteristics, :only => [:show]
+  before_filter :build_menu, :only => :index
+  before_filter :find_product, :only => :show
+  before_filter :find_characteristics, :only => :show
   before_filter :build_cart_cookies
   before_filter :build_cart
 
@@ -18,7 +18,7 @@ class ProductsController < ApplicationController
   private
 
   def build_menu
-    @menu = Menu.new(params[:top]).build
+    @menu = Menu.new(params[:category]).build
   end
 
   def find_product

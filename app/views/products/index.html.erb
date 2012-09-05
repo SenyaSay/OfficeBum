@@ -1,7 +1,7 @@
 <% content_for :side_left do %>
     <ul>
-        <% @menu.each do |item| %>
-            <li><%= link_to_unless_current item[:name], :top => item[:top], :value => item[:value] %></li>
+        <% @menu.each do |category| %>
+            <li><%= link_to_unless_current category[:name], :category => category %></li>
         <% end %>
     </ul>
 <% end %>
