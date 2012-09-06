@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
   before_filter :build_cart
 
   def index
-    @products = Product.list(params[:top], params[:value], params[:page])
+    @products = Product.list(params[:category], params[:page])
   end
 
   def show
