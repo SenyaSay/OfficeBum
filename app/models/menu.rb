@@ -1,6 +1,6 @@
 class Menu
-  def initialize(parent_id = nil)
-    @category = Category.find(parent_id) if parent_id
+  def initialize(parent = nil)
+    @category = Category.find(parent) if parent
   end
 
   def build

@@ -6,6 +6,8 @@
     </ul>
 <% end %>
 
+<div id="breadcrumbs"><%= breadcrumbs(@category) %></div>
+
 <% @products.each do |product| %> 
   <div class="contentBlocks">
     <%= link_to( raw("
