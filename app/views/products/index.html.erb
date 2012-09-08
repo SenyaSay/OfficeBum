@@ -1,12 +1,8 @@
 <% content_for :side_left do %>
-    <ul>
-        <% @menu.each do |category| %>
-            <li><%= link_to_unless_current category[:name], :category => category %></li>
-        <% end %>
-    </ul>
+    <%= menu(@menu) %>
 <% end %>
 
-<div id="breadcrumbs"><%= breadcrumbs(@category) %></div>
+<div id="breadcrumbs"><%= breadcrumbs(@categories) %></div>
 
 <% @products.each do |product| %> 
   <div class="contentBlocks">
