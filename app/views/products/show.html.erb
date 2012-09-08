@@ -14,7 +14,7 @@
 </p>
 
 <p>
-  <%= image_tag(@product.image_url(:big_thumb)) %>
+  <%= image_tag(@product.image_url(:big_thumb)) if @product.image? %>
 </p>
 
 <p><%= link_to image_tag("/assets/cart.jpg"), cart_path(:id => @product.id), :method => :put, :remote => true %></p>
