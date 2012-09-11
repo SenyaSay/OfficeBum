@@ -1,6 +1,6 @@
 <%- model_class = Product -%>
 <div class="page-header">
-  <h4><%=t '.title', :default => t('helpers.titles.edit', :model => model_class.model_name.human,
-                                   :default => "Edit #{model_class.model_name.human}") %></h4>
+  <h3><%=t '.title', :default => t('helpers.titles.edit', :model => model_class.model_name.human,
+                                   :default => "Edit #{model_class.model_name.human}") %></h3>
 </div>
 <%= render 'form', :action => 'update' %>

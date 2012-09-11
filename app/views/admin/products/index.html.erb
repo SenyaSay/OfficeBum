@@ -14,6 +14,7 @@
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
+  <tbody>
 <% @products.each do |product| %>
   <tr>
     <td> <%= link_to product.name, admin_product_path(product) %> </td>
@@ -23,8 +24,9 @@
     <td> <%= image_tag(product.image_url(:thumb)) if product.image? %> </td>
     <td> <%= link_to 'Edit', edit_admin_product_path(product), :class => 'btn btn-mini' %> </td>
     <td> <%= link_to 'Delete', admin_product_path(product), :method => :delete, :class => 'btn btn-mini btn-danger' %> </td>
-  </tr>	
+  </tr>
 <% end %>
+  </tbody>
 </table>
 <%= paginate @products%>
 <%= link_to 'Add Product', new_admin_product_path, :class => 'btn btn-primary' %>
