@@ -1,32 +1,43 @@
-<%= form_for @product, :url => { :action => action }, :html => { :multipart => true } do |f| %>
+<%= form_for @product, :url => { :action => action }, :html => { :multipart => true, :class => 'form-horizontal' } do |f| %>
     <%= flash[:error] %>
-    <div class="product_content">
-      <p>
-        Product name:
-        <%= f.text_field :name %> <br />
-        Category:
-        <%= f.select(:category_id, categoty_options(@category)) %> <br />
-        Price:
-        <%= f.text_field :price %> <br />
-        Description:
-        <%= f.text_area :description %> <br />
-        Add image:
-        <%= f.file_field :image %>
+    <div class="control-group">
+      <%= f.label :name, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :name, :class => 'text_field' %>
+      </div>
+      <%= f.label :category, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.select(:category_id, categoty_options(@category), :class => 'select') %>
+      </div>
+      <%= f.label :price, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :price, :class => 'text_field' %>
+      </div>
+      <%= f.label :description, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :description, :class => 'text_area' %>
+      </div>
+      <%= f.label :image, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.file_field :image, :class => 'file_field' %>
         <%= image_tag (@product.image_url(:thumb) || '/assets/cart.jpg'), :name => "preview", :id => "preview", :size => "50x50" %>
-      </p>
+      </div>
     </div>
 
-    <div class='characteristics'>
+    <div class="control-group">
       <%= f.fields_for :product_characteristics do |pc| %>
           <% @characteristics.each do |characteristic|%>
-              <%= characteristic.name %>
-              <%= pc.text_field(characteristic.id, :value => @product.characteristic_value(characteristic)) %> <br/>
+              <%= pc.label characteristic.name, :class => 'control-label' %>
+              <div class="controls">
+                <%= pc.text_field(characteristic.id, :value => @product.characteristic_value(characteristic))%>
+              </div>
           <% end %>
       <% end %>
     </div>
 
     <div class="product_button">
-      <%= f.submit "Submit" %>
+      <%= f.submit "Submit", :class => 'btn btn-primary' %>
+      <%= link_to 'Back', admin_products_path, :class => 'btn' %>
     </div>
 <% end %>
-<%= link_to 'Back', admin_products_path %>
+

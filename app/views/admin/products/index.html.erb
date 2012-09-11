@@ -1,30 +1,32 @@
-<h1> Products </h1>
+<%- model_class = Product -%>
+<div class="page-header">
+  <h3><%=t '.title', :default => model_class.model_name.human.pluralize %></h3>
+</div>
 
-<table>
-  <tr> 
-    <th> Name </th>
-    <th> Category </th>
-    <th> Price </th>
-    <th> Description </th>
-    <th> Image </th>
-    <th> </th>
-    <th> </th>
-    <th> </th>
-  </tr>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:category) %></th>
+      <th><%= model_class.human_attribute_name(:price) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:image) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
 <% @products.each do |product| %>
   <tr>
-    <td> <%= product.name %> </td>
+    <td> <%= link_to product.name, admin_product_path(product) %> </td>
     <td> <%= product.category.try(:name) %> </td>
     <td> <%= product.price %> </td>
     <td> <%= product.description %> </td>
     <td> <%= image_tag(product.image_url(:thumb)) if product.image? %> </td>
-    <td> <%= link_to 'Show', admin_product_path(product) %> </td>
-    <td> <%= link_to 'Edit', edit_admin_product_path(product) %> </td>
-    <td> <%= link_to 'Delete', admin_product_path(product), :method => :delete %> </td>
+    <td> <%= link_to 'Edit', edit_admin_product_path(product), :class => 'btn btn-mini' %> </td>
+    <td> <%= link_to 'Delete', admin_product_path(product), :method => :delete, :class => 'btn btn-mini btn-danger' %> </td>
   </tr>	
 <% end %>
 </table>
 <%= paginate @products%>
-<%= link_to 'Add Product', new_admin_product_path %>
-<%= link_to('Back to admin panel', admin_root_path) %>
+<%= link_to 'Add Product', new_admin_product_path, :class => 'btn btn-primary' %>
+<%= link_to 'Back to admin panel', admin_root_path, :class => 'btn' %>
 

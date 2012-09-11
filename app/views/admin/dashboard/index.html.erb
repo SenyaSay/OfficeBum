@@ -1,3 +1,7 @@
+<%- model_class = Admin -%>
+<div class="page-header">
+  <h3><%=t '.title', :default => model_class.model_name.human.pluralize %></h3>
+</div>
 Hello admin <br />
 <%= link_to('Products', admin_products_path) %> <br />
 <%= link_to('Characteristics', admin_characteristics_path) %> <br />

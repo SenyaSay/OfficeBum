@@ -2,11 +2,37 @@
 <html>
 <head>
     <title>OfficeBum</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= javascript_include_tag "admin/products" %>
     <%= csrf_meta_tags %>
 </head>
 <body>
-      <%= yield %>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="#">Admin panel</a>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li><%= link_to('Products', admin_products_path) %></li>
+            <li><%= link_to('Characteristics', admin_characteristics_path) %></li>
+            <li><%= link_to('Orders', admin_orders_path) %></li>
+            <li><%= link_to('Categories', admin_categories_path) %></li>
+            <li><%= link_to('Logout', destroy_admin_session_path, :method => :delete) %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="span9"><%= yield %></div>
+    </div>
+  </div>
 </body>
 </html>
