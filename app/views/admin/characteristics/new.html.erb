@@ -1,13 +1,6 @@
-<%= form_for @characteristic, :url => { :action => "create" } do |f| %>
-  <%= flash[:error] %>
-<div class="characteristic_content">
-  <p> Наименование характеристики: 
-  <%= f.text_field :name %> <br />
-  Уровень характеристики: 
-  <%= f.text_field :level %> </p>
+<%- model_class = Characteristic -%>
+<div class="page-header">
+  <h3><%=t '.title', :default => t('helpers.titles.new', :model => model_class.model_name.human,
+                                 :default => "New #{model_class.model_name.human}") %></h3>
 </div>
-<div class="characteristic_button">
-  <%= f.submit "Добавить характеристику" %>
-</div>
-<% end %>
-<%= link_to 'Back', admin_characteristics_path %>
+<%= render 'form', :action => 'create' %>

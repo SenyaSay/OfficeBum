@@ -1,12 +1,22 @@
-<p>
-  <b> Name: </b>
-  <%= @characteristic.name %>
-</p>
+<%- model_class = Characteristic -%>
+<div class="page-header">
+  <h3><%=t '.title', :default => model_class.model_name.human %></h3>
+</div>
 
-<p>
-  <b> Level: </b>
-  <%= @characteristic.level %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @characteristic.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:level) %>:</strong></dt>
+  <dd><%= @characteristic.level %></dd>
+</dl>
 
-<%= link_to 'Edit', edit_admin_characteristic_path(@characteristic) %>
-<%= link_to 'Back', admin_characteristics_path %>
+<div class="form-actions">
+  <%= link_to t('.back'), admin_characteristics_path, :class => 'btn'  %>
+  <%= link_to t('.edit'), edit_admin_characteristic_path(@characteristic), :class => 'btn' %>
+  <%= link_to t('.destroy'),
+              admin_characteristic_path(@characteristic),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
+
