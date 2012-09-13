@@ -1,4 +1,4 @@
-class Admin::CategoriesController < ApplicationController
+class Admin::CategoriesController < Admin::BaseController
   before_filter :find_categories, :only => :index
   before_filter :find_category, :only => [:show, :edit, :update, :destroy]
 
