@@ -37,7 +37,7 @@ group :assets do
   gem 'therubyracer', :platform => :ruby
 
   gem 'uglifier'
-  gem "twitter-bootstrap-rails"
+  gem 'bootstrap-sass'
 end
 
 gem 'jquery-rails'
