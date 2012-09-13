@@ -1,18 +1,21 @@
-<h3> Categories </h3>
+<%- model_class = Category -%>
+<div class="page-header">
+  <h3><%=t '.title', :default => model_class.model_name.human.pluralize %></h3>
+</div>
 
 <table>
   <% @categories.each do |root| %>
       <% root.self_and_descendants.each do |category| %>
           <tr>
             <td><%= "#{'--'*category.level} #{category.name}" %></td>
-            <td><%= link_to 'Show', admin_category_path(category) %></td>
-            <td><%= link_to 'Edit', edit_admin_category_path(category) %></td>
-            <td><%= link_to 'Delete', admin_category_path(category), :method => :delete %></td>
+            <td><%= link_to 'Show', admin_category_path(category), :class => 'btn btn-mini' %></td>
+            <td><%= link_to 'Edit', edit_admin_category_path(category), :class => 'btn btn-mini' %></td>
+            <td><%= link_to 'Delete', admin_category_path(category), :method => :delete, :class => 'btn btn-mini btn-danger' %></td>
           </tr>
       <% end %>
   <% end %>
 </table>
 
-<%= link_to 'Add category', new_admin_category_path %>
-<%= link_to('Back to admin panel', admin_root_path) %>
+<%= link_to 'Add Category', new_admin_category_path, :class => 'btn btn-primary' %>
+<%= link_to 'Back to admin panel', admin_root_path, :class => 'btn' %>
 

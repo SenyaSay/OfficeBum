@@ -1,16 +1,19 @@
-<%= form_for @category, :url => { :action => action } do |f| %>
-    <h3><%= flash[:error] %></h3>
+<%= form_for @category, :url => { :action => action }, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= flash[:error] %>
 
-    <p>
-      <%= f.label :name %><br/>
-      <%= f.text_field :name %>
-    </p>
-    <p>
-      <%= f.label :parent_id %><br/>
-      <%= f.select(:parent_id, categoty_options(@category)) %>
-    </p>
-
-    <p>
-      <%= f.submit 'Submit' %>
-    </p>
+<div class="control-group">
+  <%= f.label :name, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :name, :class => 'text_field' %>
+  </div>
+  <%= f.label :parent_id, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.select :parent_id, categoty_options(@category), :class => 'select' %>
+  </div>
+</div>
+<div class="characteristic_button">
+  <%= f.submit "Submit", :class => 'btn btn-primary' %>
+  <%= link_to 'Back', admin_categories_path, :class => 'btn' %>
+</div>
 <% end %>
+
