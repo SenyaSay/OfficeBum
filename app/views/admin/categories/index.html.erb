@@ -3,7 +3,7 @@
   <h3><%=t '.title', :default => model_class.model_name.human.pluralize %></h3>
 </div>
 
-<table>
+<table class="table table-striped">
   <% @categories.each do |root| %>
       <% root.self_and_descendants.each do |category| %>
           <tr>
