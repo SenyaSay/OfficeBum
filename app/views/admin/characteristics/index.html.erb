@@ -6,9 +6,9 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:level) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th><%= t('.name') %></th>
+      <th><%= t('.level') %></th>
+      <th><%= t('.actions') %></th>
     </tr>
   </thead>
   <tbody>
@@ -16,11 +16,11 @@
   <tr>
     <td> <%= link_to characteristic.name, admin_characteristic_path(characteristic) %> </td>
     <td> <%= characteristic.level %> </td>
-    <td> <%= link_to 'Edit', edit_admin_characteristic_path(characteristic), :class => 'btn btn-mini' %> </td>
-    <td> <%= link_to 'Delete', admin_characteristic_path(characteristic), :method => :delete, :class => 'btn btn-mini btn-danger' %> </td>
+    <td> <%= link_to t('.edit'), edit_admin_characteristic_path(characteristic), :class => 'btn btn-mini' %> </td>
+    <td> <%= link_to t('.delete'), admin_characteristic_path(characteristic), :method => :delete, :class => 'btn btn-mini btn-danger' %> </td>
   </tr>
 <% end %>
   </tbody>
 </table>
-<%= link_to 'Add Characteristic', new_admin_characteristic_path, :class => 'btn btn-primary' %>
-<%= link_to 'Back to admin panel', admin_root_path, :class => 'btn' %>
+<%= link_to t('.add'), new_admin_characteristic_path, :class => 'btn btn-primary' %>
+<%= link_to t('.back_to_admin_panel'), admin_root_path, :class => 'btn' %>
