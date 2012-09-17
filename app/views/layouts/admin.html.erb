@@ -13,12 +13,12 @@
       <div class="container">
         <div class="nav-collapse">
           <ul class="nav">
-            <li><%= link_to('Admin panel', admin_root_path)%></li>
-            <li><%= link_to('Products', admin_products_path) %></li>
-            <li><%= link_to('Characteristics', admin_characteristics_path) %></li>
-            <li><%= link_to('Orders', admin_orders_path) %></li>
-            <li><%= link_to('Categories', admin_categories_path) %></li>
-            <li><%= link_to('Logout', destroy_admin_session_path, :method => :delete) %></li>
+            <li><%= link_to(t('.panel'), admin_root_path)%></li>
+            <li><%= link_to(t('.products'), admin_products_path) %></li>
+            <li><%= link_to(t('.characteristics'), admin_characteristics_path) %></li>
+            <li><%= link_to(t('.orders'), admin_orders_path) %></li>
+            <li><%= link_to(t('.categories'), admin_categories_path) %></li>
+            <li><%= link_to(t('.logout'), destroy_admin_session_path, :method => :delete) %></li>
           </ul>
         </div>
       </div>
