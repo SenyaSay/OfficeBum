@@ -1,23 +1,23 @@
 <%= form_for @product, :url => { :action => action }, :html => { :multipart => true, :class => 'form-horizontal' } do |f| %>
     <%= flash[:error] %>
     <div class="control-group">
-      <%= f.label :name, :class => 'control-label' %>
+      <%= f.label t('.name'), :class => 'control-label' %>
       <div class="controls">
         <%= f.text_field :name, :class => 'text_field' %>
       </div>
-      <%= f.label :category, :class => 'control-label' %>
+      <%= f.label t('.category'), :class => 'control-label' %>
       <div class="controls">
         <%= f.select(:category_id, categoty_options(@category), :class => 'select') %>
       </div>
-      <%= f.label :price, :class => 'control-label' %>
+      <%= f.label t('.price'), :class => 'control-label' %>
       <div class="controls">
         <%= f.text_field :price, :class => 'text_field' %>
       </div>
-      <%= f.label :description, :class => 'control-label' %>
+      <%= f.label t('.description'), :class => 'control-label' %>
       <div class="controls">
         <%= f.text_area :description, :class => 'text_area' %>
       </div>
-      <%= f.label :image, :class => 'control-label' %>
+      <%= f.label t('.image'), :class => 'control-label' %>
       <div class="controls">
         <%= f.file_field :image, :class => 'file_field' %>
         <%= image_tag (@product.image_url(:thumb) || '/assets/cart.jpg'), :name => "preview", :id => "preview", :size => "50x50" %>
@@ -36,8 +36,8 @@
     </div>
 
     <div class="product_button">
-      <%= f.submit "Submit", :class => 'btn btn-primary' %>
-      <%= link_to 'Back', admin_products_path, :class => 'btn' %>
+      <%= f.submit t('.submit'), :class => 'btn btn-primary' %>
+      <%= link_to t('.back'), admin_products_path, :class => 'btn' %>
     </div>
 <% end %>
 

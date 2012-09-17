@@ -4,15 +4,15 @@
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dt><strong><%= t('.name') %>:</strong></dt>
   <dd><%= @product.name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:category) %>:</strong></dt>
+  <dt><strong><%= t('.category') %>:</strong></dt>
   <dd><%= @product.category.try(:name) %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:price) %>:</strong></dt>
+  <dt><strong><%= t('.price') %>:</strong></dt>
   <dd><%= @product.price %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dt><strong><%= t('.description') %>:</strong></dt>
   <dd><%= @product.description %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:image) %>:</strong></dt>
+  <dt><strong><%= t('.image') %>:</strong></dt>
   <dd><%= image_tag(@product.image_url(:thumb)) if @product.image? %></dd>
 </dl>
 
