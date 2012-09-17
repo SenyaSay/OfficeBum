@@ -6,12 +6,12 @@
 <table class="table table-striped orders">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:user) %></th>
-      <th><%= model_class.human_attribute_name(:products) %></th>
-      <th><%= model_class.human_attribute_name(:total_price) %></th>
-      <th><%= model_class.human_attribute_name(:status) %></th>
-      <th><%= model_class.human_attribute_name(:description) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th><%= t('.user') %></th>
+      <th><%= t('.products') %></th>
+      <th><%= t('.total_price') %></th>
+      <th><%= t('.status') %></th>
+      <th><%= t('.description') %></th>
+      <th><%= t('.actions') %></th>
     </tr>
   </thead>
   <tbody>
@@ -22,11 +22,11 @@
     <td> <%= order.total_price %> </td>
     <td> <%= select :status, nil, Order::STATUS, { selected: order.status }, { id: order.id, :class => 'select' } %> </td>
     <td> <%= order.description %> </td>
-    <td> <%= link_to 'Delete', admin_order_path(order), :method => :delete, :class => 'btn btn-mini btn-danger' %> </td>
+    <td> <%= link_to t('.destroy'), admin_order_path(order), :method => :delete, :class => 'btn btn-mini btn-danger' %> </td>
   </tr>
 <% end %>
   </tbody>
 </table>
 <%= paginate @orders %>
-<%= link_to 'Back to admin panel', admin_root_path, :class => 'btn' %>
+<%= link_to t('.back_to_admin_panel'), admin_root_path, :class => 'btn' %>
 
