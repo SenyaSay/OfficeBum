@@ -1,12 +1,12 @@
-<h1> Orders </h1>
+<h1> <%= t('.title') %> </h1>
 
 <table class="orders">
   <tr> 
-    <th> User </th>
-    <th> Products </th>
-    <th> Total price </th>
-    <th> Status </th>
-    <th> Description </th>
+    <th> <%= t('.user') %> </th>
+    <th> <%= t('.products') %> </th>
+    <th> <%= t('.total_price') %> </th>
+    <th> <%= t('.status') %> </th>
+    <th> <%= t('.description') %> </th>
     <th></th>
   </tr>
 <% @orders.each do |order| %>
@@ -21,5 +21,5 @@
 </table>
 <%= paginate @orders %>
 
-<%= link_to('Back to store', root_url) %>
+<%= link_to(t('.back'), root_url) %>
 
