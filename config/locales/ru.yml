@@ -1,0 +1,145 @@
+ru:
+
+  layouts:
+    admin:
+      panel: "Панель администратора"
+      products: "Продукты"
+      characteristics: "Характеристики"
+      orders: "Заказы"
+      categories: "Категории"
+      logout: "Выход"
+  admin:
+    dashboard:
+      index:
+        title: "Панель администратора"
+        products: "Продукты"
+        characteristics: "Характеристики"
+        orders: "Заказы"
+        categories: "Категории"
+        logout: "Выход"
+    categories:
+      edit:
+        title: "Изменить категорию"
+      new:
+        title: "Добавить категорию"
+      form:
+        name: "Название"
+        parent_id: "Родитель"
+        submit: "Применить"
+        back: "Назад"
+      index:
+        title: "Категории"
+        show: "Показать"
+        edit: "Изменить"
+        delete: "Удалить"
+        add: "Добавить"
+        back_to_admin_panel: "Вернуться в панель администратора"
+      show:
+        title: "Категория"
+        name: "Название"
+        back: "Назад"
+        edit: "Изменить"
+        destroy: "Удалить"
+    characteristics:
+      edit:
+        title: "Изменить характеристику"
+      new:
+        title: "Добавить характеристику"
+      form:
+        name: "Название"
+        level: "Уровень"
+        submit: "Применить"
+        back: "Назад"
+      index:
+        title: "Характеристики"
+        name: "Название"
+        level: "Уровень"
+        actions: "Действия"
+        edit: "Изменить"
+        delete: "Удалить"
+        add: "Добавить"
+        back_to_admin_panel: "Вернуться в панель администратора"
+      show:
+        title: "Характеристика"
+        name: "Название"
+        level: "Уровень"
+        back: "Назад"
+        edit: "Изменить"
+        destroy: "Удалить"
+    orders:
+      index:
+        title: "Заказы"
+        user: "Пользователь"
+        products: "Продукты"
+        total_price: "Общая стоимость"
+        status: "Статус"
+        description: "Информация"
+        actions: "Действия"
+        destroy: "Удалить"
+        back_to_admin_panel: "Вернуться в панель администратора"
+    products:
+      edit:
+        title: "Изменить продукт"
+      new:
+        title: "Добавить продукт"
+      form:
+        name: "Название"
+        category: "Категория"
+        price: "Цена"
+        description: "Описание"
+        image: "Фото"
+        submit: "Применить"
+        back: "Назад"
+      index:
+        title: "Продукты"
+        name: "Название"
+        category: "Категория"
+        price: "Цена"
+        description: "Описание"
+        image: "Фото"
+        actions: "Действия"
+        edit: "Изменить"
+        delete: "Удалить"
+        add: "Добавить"
+        back_to_admin_panel: "Вернуться в панель администратора"
+      show:
+        title: "Продукт"
+        name: "Название"
+        category: "Категория"
+        price: "Цена"
+        description: "Описание"
+        image: "Фото"
+        back: "Назад"
+        edit: "Изменить"
+        destroy: "Удалить"
+  orders:
+    index:
+      title: "Заказ"
+      user: "Пользователь"
+      products: "Продукты"
+      total_price: "Общая стоимость"
+      status: "Статус"
+      description: "Информация о пользователе"
+      back: "Назад"
+    new:
+      title: "Заказ"
+      user: "Пользователь"
+      description: "Информация о пользователе"
+      submit: "Заказать"
+      back: "Вернуться"
+  products:
+    cart:
+      title: "Заказ"
+      empty_cart: "Очистить"
+      checkout: "Оформить заказ"
+    cart_data:
+      total: "Всего"
+    index:
+      price: "Цена"
+    show:
+      name: "Наименование"
+      price: "Цена"
+      description: "Описание"
+      characteristics: "Характеристики"
+      value: "Значение"
+      back: "Назад"
