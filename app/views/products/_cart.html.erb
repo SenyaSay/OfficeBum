@@ -1,10 +1,10 @@
 <div id="cart">
-  <h3>Cart</h3>
+  <h3><%= t('.title') %></h3>
   <%= render "/products/cart_data" %>
   <div>
-    <%= link_to "Empty cart", cart_path, :method => :delete, :remote => true %>
+    <%= link_to t('.empty_cart'), cart_path, :method => :delete, :remote => true %>
   </div>
   <div>
-    <%= link_to "Checkout", new_order_path %>
+    <%= link_to t('.checkout'), new_order_path %>
   </div>
 </div>

@@ -1,15 +1,15 @@
 <p>
-  <b>Name: </b>
+  <b> <%= t('.name') %>: </b>
   <%= @product.name %>
 </p>
 
 <p>
-  <b> Price: </b>
+  <b> <%= t('.price') %>: </b>
   <%= @product.price %>
 </p>
 
 <p>
-  <b> Description: </b>
+  <b> <%= t('.description') %>: </b>
   <%= @product.description %>
 </p>
 
@@ -19,12 +19,12 @@
 
 <p><%= link_to image_tag("/assets/cart.jpg"), cart_path(:id => @product.id), :method => :put, :remote => true %></p>
 
-<p><b> Characteristics: </b></p>
+<p><b> <%= t('.characteristics') %>: </b></p>
 <div class='characteristics'>
   <table>
     <tr>
-      <th> Name </th>
-      <th> Value </th>
+      <th> <%= t('.name') %> </th>
+      <th> <%= t('.value') %> </th>
     </tr>
   <% @characteristics.each do |characteristic|%>
     <tr>
@@ -35,4 +35,4 @@
   </table>
 </div>
 
-<%= link_to 'Back', root_path %>
+<%= link_to t('.back'), root_path %>

@@ -13,7 +13,7 @@
     </div>
     "), product_path(product))%>
     <p>
-      Price: <%= product.price %>
+      <%= t('.price') %>: <%= product.price %>
       <%= link_to image_tag("/assets/cart.jpg"), cart_path(:id => product.id), :method => :put, :remote => true %>
     </p>
   </div>  
