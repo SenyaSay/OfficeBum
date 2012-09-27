@@ -1,6 +1,5 @@
 <%- model_class = Characteristic -%>
 <div class="page-header">
-  <h3><%=t '.title', :default => t('helpers.titles.new', :model => model_class.model_name.human,
-                                 :default => "Edit #{model_class.model_name.human}") %></h3>
+  <h3><%= t("titles.#{controller.controller_name}.#{controller.action_name}") %></h3>
 </div>
 <%= render 'form', :action => 'update' %>

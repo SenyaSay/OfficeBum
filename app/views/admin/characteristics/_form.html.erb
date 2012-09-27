@@ -2,17 +2,17 @@
   <%= flash[:error] %>
 
 <div class="control-group">
-  <%= f.label t('.name'), :class => 'control-label' %>
+  <%= f.label :name, :class => 'control-label' %>
   <div class="controls">
     <%= f.text_field :name, :class => 'text_field' %>
   </div>
-  <%= f.label t('.level'), :class => 'control-label' %>
+  <%= f.label :level, :class => 'control-label' %>
   <div class="controls">
     <%= f.text_field :level, :class => 'text_field' %>
   </div>
 </div>
 <div class="characteristic_button">
-  <%= f.submit t('.submit'), :class => 'btn btn-primary' %>
-  <%= link_to t('.back'), admin_characteristics_path, :class => 'btn' %>
+  <%= f.submit t('button.create'), :class => 'btn btn-primary' %>
+  <%= link_to t('button.back'), admin_characteristics_path, :class => 'btn' %>
 </div>
 <% end %>
