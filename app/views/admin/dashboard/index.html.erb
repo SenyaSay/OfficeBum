@@ -1,9 +1,9 @@
 <%- model_class = Admin -%>
 <div class="page-header">
-  <h3><%=t '.title', :default => model_class.model_name.human.pluralize %></h3>
+  <h3><%= t("titles.#{controller.controller_name}.#{controller.action_name}") %></h3>
 </div>
-<%= link_to(t('.products'), admin_products_path) %> <br />
-<%= link_to(t('.characteristics'), admin_characteristics_path) %> <br />
-<%= link_to(t('.orders'), admin_orders_path) %> <br />
-<%= link_to(t('.categories'), admin_categories_path) %> <br />
-<%= link_to(t('.logout'), destroy_admin_session_path, :method => :delete) %>
+<%= link_to(t('menu.admin.products'), admin_products_path) %> <br />
+<%= link_to(t('menu.admin.characteristics'), admin_characteristics_path) %> <br />
+<%= link_to(t('menu.admin.orders'), admin_orders_path) %> <br />
+<%= link_to(t('menu.admin.categories'), admin_categories_path) %> <br />
+<%= link_to(t('auth.logout'), destroy_admin_session_path, :method => :delete) %>
