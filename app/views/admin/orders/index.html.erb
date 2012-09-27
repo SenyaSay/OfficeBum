@@ -1,6 +1,6 @@
 <%- model_class = Order -%>
 <div class="page-header">
-  <h3><%=t '.title', :default => model_class.model_name.human.pluralize %></h3>
+  <h3><%= t("titles.#{controller.controller_name}.#{controller.action_name}") %></h3>
 </div>
 
 <table class="table table-striped orders">
@@ -22,11 +22,11 @@
     <td> <%= order.total_price %> </td>
     <td> <%= select :status, nil, Order::STATUS, { selected: order.status }, { id: order.id, :class => 'select' } %> </td>
     <td> <%= order.description %> </td>
-    <td> <%= link_to t('.destroy'), admin_order_path(order), :method => :delete, :class => 'btn btn-mini btn-danger' %> </td>
+    <td> <%= link_to t('button.delete'), admin_order_path(order), :method => :delete, :class => 'btn btn-mini btn-danger' %> </td>
   </tr>
 <% end %>
   </tbody>
 </table>
 <%= paginate @orders %>
-<%= link_to t('.back_to_admin_panel'), admin_root_path, :class => 'btn' %>
+<%= link_to t('button.back_to_admin_panel'), admin_root_path, :class => 'btn' %>
 
