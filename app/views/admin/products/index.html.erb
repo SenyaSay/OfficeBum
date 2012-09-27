@@ -1,6 +1,6 @@
 <%- model_class = Product -%>
 <div class="page-header">
-  <h3><%=t '.title', :default => model_class.model_name.human.pluralize %></h3>
+  <h3><%= t("titles.#{controller.controller_name}.#{controller.action_name}") %></h3>
 </div>
 
 <table class="table table-striped">
@@ -22,13 +22,13 @@
     <td> <%= product.price %> </td>
     <td> <%= product.description %> </td>
     <td> <%= image_tag(product.image_url(:thumb)) if product.image? %> </td>
-    <td> <%= link_to t('.edit'), edit_admin_product_path(product), :class => 'btn btn-mini' %> </td>
-    <td> <%= link_to t('.delete'), admin_product_path(product), :method => :delete, :class => 'btn btn-mini btn-danger' %> </td>
+    <td> <%= link_to t('button.edit'), edit_admin_product_path(product), :class => 'btn btn-mini' %> </td>
+    <td> <%= link_to t('button.delete'), admin_product_path(product), :method => :delete, :class => 'btn btn-mini btn-danger' %> </td>
   </tr>
 <% end %>
   </tbody>
 </table>
 <%= paginate @products%>
-<%= link_to t('.add'), new_admin_product_path, :class => 'btn btn-primary' %>
-<%= link_to t('.back_to_admin_panel'), admin_root_path, :class => 'btn' %>
+<%= link_to t('button.add'), new_admin_product_path, :class => 'btn btn-primary' %>
+<%= link_to t('button.back_to_admin_panel'), admin_root_path, :class => 'btn' %>
 
