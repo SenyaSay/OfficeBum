@@ -1,6 +1,6 @@
 <%- model_class = Category -%>
 <div class="page-header">
-  <h3><%=t '.title', :default => model_class.model_name.human %></h3>
+  <h3><%= t("titles.#{controller.controller_name}.#{controller.action_name}") %></h3>
 </div>
 
 <dl class="dl-horizontal">
@@ -9,9 +9,9 @@
 </dl>
 
 <div class="form-actions">
-  <%= link_to t('.back'), admin_categories_path, :class => 'btn'  %>
-  <%= link_to t('.edit'), edit_admin_category_path(@category), :class => 'btn' %>
-  <%= link_to t('.destroy'),
+  <%= link_to t('button.back'), admin_categories_path, :class => 'btn'  %>
+  <%= link_to t('button.edit'), edit_admin_category_path(@category), :class => 'btn' %>
+  <%= link_to t('button.delete'),
               admin_category_path(@category),
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },

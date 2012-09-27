@@ -1,6 +1,6 @@
 <%- model_class = Category -%>
 <div class="page-header">
-  <h3><%=t '.title', :default => model_class.model_name.human.pluralize %></h3>
+  <h3><%= t("titles.#{controller.controller_name}.#{controller.action_name}") %></h3>
 </div>
 
 <table class="table table-striped">
@@ -8,14 +8,14 @@
       <% root.self_and_descendants.each do |category| %>
           <tr>
             <td><%= "#{'--'*category.level} #{category.name}" %></td>
-            <td><%= link_to t('.show'), admin_category_path(category), :class => 'btn btn-mini' %></td>
-            <td><%= link_to t('.edit'), edit_admin_category_path(category), :class => 'btn btn-mini' %></td>
-            <td><%= link_to t('.delete'), admin_category_path(category), :method => :delete, :class => 'btn btn-mini btn-danger' %></td>
+            <td><%= link_to t('button.show'), admin_category_path(category), :class => 'btn btn-mini' %></td>
+            <td><%= link_to t('button.edit'), edit_admin_category_path(category), :class => 'btn btn-mini' %></td>
+            <td><%= link_to t('button.delete'), admin_category_path(category), :method => :delete, :class => 'btn btn-mini btn-danger' %></td>
           </tr>
       <% end %>
   <% end %>
 </table>
 
-<%= link_to t('.add'), new_admin_category_path, :class => 'btn btn-primary' %>
-<%= link_to t('.back_to_admin_panel'), admin_root_path, :class => 'btn' %>
+<%= link_to t('button.add'), new_admin_category_path, :class => 'btn btn-primary' %>
+<%= link_to t('button.back_to_admin_panel'), admin_root_path, :class => 'btn' %>
 
