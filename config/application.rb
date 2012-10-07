@@ -56,7 +56,6 @@ module OfficeBum
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
-    # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-    config.assets.precompile += %w( *.js *.css *.scss *.jpg *.png *.jpeg *.gif)
+    config.assets.precompile += %w( admin.js admin.css store.js store.css *.jpg *.png *.jpeg *.gif)
   end
 end
