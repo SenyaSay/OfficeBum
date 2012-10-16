@@ -3,7 +3,7 @@ class CartsController < ApplicationController
 
   def update
     @cart = Cart.new(@cart_cookies)
-    cookies[:cart] = {:value => Marshal.dump(@cart.to_cookies)}
+    cookies[:cart] = {:value => Marshal.dump(@cart.to_cookies), :expires => 1.year.from_now.utc}
   end
 
   def destroy
