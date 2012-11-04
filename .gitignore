@@ -30,3 +30,5 @@ REVISION
 /public/stylesheets/cache/*
 /public/assets/**/*
 /public/uploads/*
+Capfile
+/config/deploy.rb

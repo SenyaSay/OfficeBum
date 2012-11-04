@@ -16,6 +16,8 @@ gem 'awesome_nested_set'
 group :development do
   gem 'parallel_tests', '0.8.2'
   gem 'quiet_assets'
+  gem "capistrano"
+  gem "rvm-capistrano"
 end
 
 group :test do
