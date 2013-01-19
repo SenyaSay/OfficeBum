@@ -8,24 +8,49 @@
 </head>
 <body>
 <div id="wrapper">
-  <div id="header">
-    Header
+  <header>
+    <%= image_tag "banner.png" %>
+    <menu>
+      <li>
+        <%= link_to "Catalog", "#" %>
+      </li><li class="current">
+        <%= link_to "Missiya", "#" %>
+      </li><li>
+        <%= link_to "Oplata", "#" %>
+      </li><li>
+        <%= link_to "Dostavka", "#" %>
+      </li><li>
+        <%= link_to "Contacts", "#" %>
+      </li><li>
+        <%= link_to "Chto to", "#" %>
+      </li>
+    </menu>
+
+    <%= link_to "One click order", "#" %>
+  </header>
+
+  <div id="main">
+    <div class="left">
+      <section class="window" id="main_categories"></section>
+      <section class="window" id="categories"><%= yield :side_left %></section>
+      <section class="window" id="advertising"></section>
+    </div>
+
+    <div class="right">
+      <section class="window" id="login_form"><%= render '/layouts/sign_in_part' %></section>
+      <section class="window" id="main_product"><%= yield :side_right %></section>
+      <section class="window" id="contacts">8(050)555-55-55</section>
+    </div>
+
+    <div class="content">
+      <section class="window" id="instruments"></section>
+      <section class="window" id="content"><%= yield %></section>
+    </div>
   </div>
 
-  <div id="middle">
-    <div id="container">
-      <div id="content"><%= yield %></div>
-    </div>
-    <div class="sidebar" id="sideLeft"><%= yield :side_left %></div>
-    <div class="sidebar" id="sideRight">
-      <%= render '/layouts/sign_in_part' %>
-      <%= yield :side_right %>
-    </div>
-  </div>
   <%= render 'cart' %>
-  <div id="footer">
-    Footer
-  </div>
+
+  <footer> Footer</footer>
 </div>
 </body>
 </html>

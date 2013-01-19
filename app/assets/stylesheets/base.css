@@ -6,12 +6,13 @@
 body {
     font: 12px/18px Arial, Tahoma, Verdana, sans-serif;
     width: 100%;
+    background-color: #44BBFF;
 }
 
 a {
     color: blue;
     outline: none;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 a:hover {
@@ -47,57 +48,79 @@ li {
 
 /* Header
 -----------------------------------------------------------------------------*/
-#header {
-    height: 150px;
-    background: #FFE680;
-}
-
-/* Middle
------------------------------------------------------------------------------*/
-#middle {
-    border-left: 250px solid #B5E3FF;
-    border-right: 250px solid #FFACAA;
-    height: 1%;
+header {
     position: relative;
+    height: 120px;
+    background: white url("logo.png") no-repeat;
+    margin-bottom: 3px;
+    border-radius: 0 0 15px 15px;
+    text-align: center;
 }
 
-#middle:after {
-    content: '.';
-    display: block;
-    clear: both;
-    visibility: hidden;
-    height: 0;
+header > img {
+    margin: 12px;
 }
 
-#container {
-    width: 100%;
+header > a {
+    display: inline-block;
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    padding: 0 5px;
+    background: #0000ff;
+    color: white;
+    font: bold 13px/20px Arial;
+}
+
+header menu {
+    position: absolute;
+    bottom: 0;
+    left: 210px;
+    font: bold  18px/36px Arial;
+}
+
+header menu li {
+    display: inline-block;
+    background: #eee;
+    border-radius: 6px 6px 0 0;
+    border-top: 1px solid black;
+    border-left: 1px  solid black;
+    margin: 0;
+}
+
+header menu li a {
+    padding: 0 10px;
+    color: #007777;
+    display: inline-block;
+    letter-spacing: 1px;
+}
+
+header menu li.current {
+    background-color: #44BBFF;
+    border: 0;
+}
+
+header menu li.current a {
+    color: red;
+}
+
+.window {
+    width:780px;
+    margin-left: 100px;
+    border: 1px solid black;
+    margin-bottom: 2px;
+}
+
+.left {
     float: left;
-    overflow: hidden;
-    margin-right: -100%;
+    width: 100px;
+    border: 1px solid black;
 }
 
-#content {
-    padding: 0 20px;
-}
-
-/* Sidebar Left
------------------------------------------------------------------------------*/
-#sideLeft {
-    float: left;
-    width: 250px;
-    position: relative;
-    background: #B5E3FF;
-    left: -250px;
-}
-
-/* Sidebar Right
------------------------------------------------------------------------------*/
-#sideRight {
+.right {
     float: right;
-    margin-right: -250px;
-    width: 250px;
-    position: relative;
-    background: #FFACAA;
+    width: 100px;
+    border: 1px solid black;
 }
 
 #sign_in {
@@ -116,16 +139,7 @@ li {
 
 /* Footer
 -----------------------------------------------------------------------------*/
-#footer {
+footer {
     height: 100px;
     background: #BFF08E;
-}
-
-
-/* Product/index */
-.contentBlocks {
-    display: inline-block;
-    width: 30%;
-    height: 90px;
-    text-align: center;
 }
