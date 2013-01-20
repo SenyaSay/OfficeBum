@@ -38,7 +38,6 @@ li {
 #wrapper {
     width: 1000px;
     margin: 0 auto;
-    position: relative;
 }
 
 .error {
@@ -104,23 +103,28 @@ header menu li.current a {
     color: red;
 }
 
+/* Main part */
+
 .window {
-    width:780px;
-    margin-left: 100px;
+    width:560px;
     border: 1px solid black;
     margin-bottom: 2px;
 }
 
 .left {
     float: left;
-    width: 100px;
+    width: 250px;
     border: 1px solid black;
 }
 
 .right {
     float: right;
-    width: 100px;
+    width: 190px;
     border: 1px solid black;
+}
+
+#content {
+    margin-left: 250px;
 }
 
 #sign_in {
@@ -140,6 +144,10 @@ header menu li.current a {
 /* Footer
 -----------------------------------------------------------------------------*/
 footer {
-    height: 100px;
-    background: #BFF08E;
+    height: 60px;
+    width: 1000px;
+    background: #0000FF;
+    border-radius: 15px 15px 0 0;
+    position: absolute;
+    bottom: 0;
 }
