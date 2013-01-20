@@ -7,10 +7,12 @@
           <%= f.label :email %><%= f.text_field :email, :placeholder => 'Email' %>
           <%= f.label :password %><%= f.password_field :password, :placeholder => 'Password' %>
           <%= f.label :remember_me %><%= f.check_box :remember_me %>
-          <%= f.submit 'Sign in' %>
+          <div class="sign_in_button">
+            <%= f.submit 'Sign in' %>
+          </div>
           <div class="registration_link">
             <%= link_to "Forgot password?", new_password_path('user') %> /
-            <%= link_to('Register', new_user_registration_path)  %>
+            <%= link_to('Register', new_user_registration_path) %>
           </div>
       <% end %>
   <% end %>
