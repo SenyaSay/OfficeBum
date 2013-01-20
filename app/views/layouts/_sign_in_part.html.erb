@@ -3,7 +3,6 @@
       <%= "Hello, #{current_user.email}" %>
       (<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>)
   <% else %>
-      <h3>Sign in form</h3>
       <%= form_for("user", :url => user_session_path) do |f| %>
           <%= f.text_field :email, :placeholder => 'Email' %>
           <%= f.password_field :password, :placeholder => 'Password' %>

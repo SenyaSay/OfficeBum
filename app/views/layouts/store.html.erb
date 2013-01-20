@@ -31,20 +31,42 @@
 
   <div id="main">
     <div class="left">
-      <section class="window" id="main_categories"></section>
-      <section class="window" id="categories"><%= yield :side_left %></section>
-      <section class="window" id="advertising"></section>
+      <section class="window" id="main_categories">
+        <h3>Main categories</h3>
+      </section>
+      <section class="window" id="categories">
+        <h3>Categories</h3>
+        <%= yield :side_left %>
+      </section>
+      <section class="window" id="advertising">
+        <h3>Advertising</h3>
+      </section>
     </div>
 
     <div class="right">
-      <section class="window" id="login_form"><%= render '/layouts/sign_in_part' %></section>
-      <section class="window" id="main_product"><%= yield :side_right %></section>
-      <section class="window" id="contacts">8(050)555-55-55</section>
+      <section class="window" id="login_form">
+        <h3>Sign in form</h3>
+        <%= render '/layouts/sign_in_part' %>
+      </section>
+      <section class="window" id="main_product">
+        <h3>Main product</h3>
+        <%= yield :side_right %>
+      </section>
+      <section class="window" id="contacts">
+        <h3>Contacts</h3>
+        8(050)555-55-55
+      </section>
     </div>
 
     <div class="content">
-      <section class="window" id="instruments"></section>
-      <section class="window" id="content"><%= yield %></section>
+      <section class="window" id="instruments">
+        <h3>Instruments</h3>
+        <%= breadcrumbs(@categories) || 'breadcrumbs' %>
+      </section>
+      <section class="window" id="content">
+        <h3>All products</h3>
+        <%= yield %>
+      </section>
     </div>
   </div>
 

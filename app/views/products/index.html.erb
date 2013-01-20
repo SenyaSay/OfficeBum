@@ -2,8 +2,6 @@
     <%= menu(@menu) %>
 <% end %>
 
-<div id="breadcrumbs"><%= breadcrumbs(@categories) %></div>
-
 <% @products.each do |product| %> 
   <div class="contentBlocks">
     <%= link_to( raw("

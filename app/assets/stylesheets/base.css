@@ -114,14 +114,29 @@ header menu li.current a {
 /* Main part */
 
 .window {
-    width:560px;
-    border: 1px solid black;
-    margin-bottom: 2px;
+    background: yellow;
+    width:550px;
+    margin-bottom: 3px;
+    padding-bottom: 5px;
+    border-radius: 6px;
+}
+
+.window h3 {
+    background: -moz-linear-gradient(left, #0000ff, #fff); /* Firefox 3.6+ */
+    /* Chrome 1-9, Safari 4-5 */
+    background: -webkit-gradient(linear, left top, left bottom,
+color-stop(0%,#0000ff), color-stop(100%,#fff));
+    /* Chrome 10+, Safari 5.1+ */
+    background: -webkit-linear-gradient(left, #0000ff, #fff);
+    background: -o-linear-gradient(left, #0000ff, #fff); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, #0000ff, #fff); /* IE10 */
+    background: linear-gradient(left, #0000ff, #fff);
+    color: #0BEEFF;
+    padding: 3px 3px 3px 10px;
 }
 
 .left {
     float: left;
-    border: 1px solid black;
 }
 
 .left .window {
@@ -130,7 +145,6 @@ header menu li.current a {
 
 .right {
     float: right;
-    border: 1px solid black;
 }
 
 .right .window {
@@ -138,7 +152,7 @@ header menu li.current a {
 }
 
 .content {
-    margin-left: 250px;
+    margin-left: 255px;
 }
 
 #sign_in {
