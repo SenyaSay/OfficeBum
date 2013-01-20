@@ -2,18 +2,5 @@
     <%= menu(@menu) %>
 <% end %>
 
-<% @products.each do |product| %> 
-  <div class="contentBlocks">
-    <%= link_to( raw("
-    <div>
-      #{image_tag(product.image_url(:thumb)) if product.image?}<br />
-      #{product.name}
-    </div>
-    "), product_path(product))%>
-    <p>
-      <%= t('.price') %>: <%= product.price %>
-      <%= link_to image_tag("/assets/cart.jpg"), cart_path(:id => product.id), :method => :put, :remote => true %>
-    </p>
-  </div>  
-<% end %>
 <%= paginate @products %>
+<%= render @products %>

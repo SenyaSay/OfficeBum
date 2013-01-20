@@ -1,0 +1,12 @@
+<div class="product">
+  <%= link_to( raw("
+    <div>
+      #{image_tag(product.image? ? product.image_url(:thumb) : 'rails.png', class: "photo") }<br />
+      #{product.name}
+    </div>
+    "), product_path(product))%>
+  <p>
+    <%= t('.price') %>: <%= product.price %>
+    <%= link_to image_tag("/assets/cart.jpg"), cart_path(:id => product.id), :method => :put, :remote => true %>
+  </p>
+</div>

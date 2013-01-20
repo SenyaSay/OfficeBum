@@ -1,0 +1,10 @@
+.product {
+    display: inline-block;
+    width: 177px;
+    height: 275px;
+    vertical-align: top;
+}
+.product .photo {
+    width: 177px;
+    height: 160px;
+}
