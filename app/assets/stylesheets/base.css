@@ -120,6 +120,10 @@ header menu li.current a {
     padding-bottom: 5px;
     border-radius: 6px;
 }
+.window > ul,
+.window > div {
+    margin: 5px 5px 0;
+}
 
 .window h3 {
     background: -moz-linear-gradient(left, #0000ff, #fff); /* Firefox 3.6+ */
@@ -135,6 +139,14 @@ color-stop(0%,#0000ff), color-stop(100%,#fff));
     padding: 3px 3px 3px 10px;
 }
 
+/*  Main content */
+
+.content {
+    margin-left: 255px;
+}
+
+/* Left side */
+
 .left {
     float: left;
 }
@@ -146,7 +158,6 @@ color-stop(0%,#0000ff), color-stop(100%,#fff));
 #main_categories ul,
 #categories ul {
     width: 240px;
-    margin: 5px 5px 0;
     background: #fff;
 }
 
@@ -164,6 +175,8 @@ color-stop(0%,#0000ff), color-stop(100%,#fff));
     padding-left: 5px;
 }
 
+/* Right side */
+
 .right {
     float: right;
 }
@@ -172,22 +185,31 @@ color-stop(0%,#0000ff), color-stop(100%,#fff));
     width: 190px;
 }
 
-.content {
-    margin-left: 255px;
+#sign_in {
+    background: #eee;
 }
 
-#sign_in {
-    margin-left: 10px;
+#sign_in label {
+    width: 60px;
+    display: inline-block;
 }
 
 #sign_in input[type="text"],
 #sign_in input[type="password"]{
-    width: 180px;
-    display: block;
+    width: 110px;
 }
 
 #sign_in input[type="submit"] {
     display: block;
+    margin: 0 auto;
+
+}
+
+.registration_link {
+    margin-top: 5px;
+    background: #fff;
+    text-align: center;
+    border-top: 1px solid #ccc;
 }
 
 /* Footer

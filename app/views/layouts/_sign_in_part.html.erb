@@ -4,13 +4,14 @@
       (<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>)
   <% else %>
       <%= form_for("user", :url => user_session_path) do |f| %>
-          <%= f.text_field :email, :placeholder => 'Email' %>
-          <%= f.password_field :password, :placeholder => 'Password' %>
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
+          <%= f.label :email %><%= f.text_field :email, :placeholder => 'Email' %>
+          <%= f.label :password %><%= f.password_field :password, :placeholder => 'Password' %>
+          <%= f.label :remember_me %><%= f.check_box :remember_me %>
           <%= f.submit 'Sign in' %>
-          <%= link_to('Not register yet?', new_user_registration_path)  %><br />
-          <%= link_to "Forgot your password?", new_password_path('user') %>
+          <div class="registration_link">
+            <%= link_to "Forgot password?", new_password_path('user') %> /
+            <%= link_to('Register', new_user_registration_path)  %>
+          </div>
       <% end %>
   <% end %>
 </div>
