@@ -51,7 +51,7 @@
       </section>
       <section class="window" id="main_product">
         <h3>Main product</h3>
-        <%= yield :side_right %>
+        <%= render "products/product", product: Product.first %>
       </section>
       <section class="window" id="contacts">
         <h3>Contacts</h3>

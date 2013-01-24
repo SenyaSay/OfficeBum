@@ -1,10 +1,48 @@
 .product {
     display: inline-block;
-    width: 177px;
+    width: 180px;
     height: 275px;
     vertical-align: top;
+    background: #eee;
 }
 .product .photo {
-    width: 177px;
+    width: 180px;
     height: 160px;
+    display: block;
+}
+
+.product .price,
+.product .articul {
+    height: 30px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.product .price {
+    background: yellow;
+    color: red;
+    font-weight: bold;
+    width: 89px;
+    text-align: right;
+}
+
+.product .articul {
+    background: white;
+    width: 90px;
+}
+
+.product .product_name {
+    height: 55px;
+}
+
+.product .add_to_cart {
+    height: 30px;
+}
+
+.product .add_to_cart > * {
+    display: inline;
+}
+
+.product .add_to_cart input {
+    width: 25%;
 }

@@ -15,4 +15,11 @@ module ProductsHelper
       end.join.html_safe
     end
   end
+
+  def image_block(product)
+    content_tag :div do
+      image_tag(product.image? ? product.image_url(:thumb) : 'rails.png', class: "photo") +
+      content_tag(:div, product.name, class: :product_name)
+    end
+  end
 end

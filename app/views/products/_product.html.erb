@@ -1,12 +1,13 @@
 <div class="product">
-  <%= link_to( raw("
-    <div>
-      #{image_tag(product.image? ? product.image_url(:thumb) : 'rails.png', class: "photo") }<br />
-      #{product.name}
-    </div>
-    "), product_path(product))%>
-  <p>
-    <%= t('.price') %>: <%= product.price %>
+  <%= link_to image_block(product), product_path(product) %>
+  <div class="articul">
+    <div>Articul:</div>
+    BM: 45435345
+  </div><div class="price"><%= sprintf("%.2f", product.price) %> hrn.</div>
+  <div class="add_to_cart">
+    <span>Add</span>
+    <%= text_field_tag :count, 1 %>
+    <%= select_tag :box %>
     <%= link_to image_tag("/assets/cart.jpg"), cart_path(:id => product.id), :method => :put, :remote => true %>
-  </p>
+  </div>
 </div>
