@@ -4,7 +4,17 @@
     height: 275px;
     vertical-align: top;
     background: #eee;
+    color: #777;
 }
+
+.product a {
+    color: #777;
+}
+
+.product .product_name {
+    font-size: 13px;
+}
+
 .product .photo {
     width: 180px;
     height: 160px;
@@ -22,13 +32,39 @@
     background: yellow;
     color: red;
     font-weight: bold;
-    width: 89px;
+    width: 90px;
     text-align: right;
+}
+
+.product .price > span {
+    margin-top: 2px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.product .price .integer_part {
+    font-size: 20px;
+}
+
+.product .price .decimal_part {
+    line-height: 12px;
+    border-bottom: red 1px solid;
+}
+
+.product .price .currency {
+    line-height: 30px;
+    vertical-align: bottom;
 }
 
 .product .articul {
     background: white;
     width: 90px;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.product .articul > div {
+    color: #000;
 }
 
 .product .product_name {

@@ -22,4 +22,8 @@ module ProductsHelper
       content_tag(:div, product.name, class: :product_name)
     end
   end
+
+  def decimal_part(price)
+    (price*100).to_i.to_s[-2..-1]
+  end
 end

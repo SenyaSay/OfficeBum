@@ -2,8 +2,12 @@
   <%= link_to image_block(product), product_path(product) %>
   <div class="articul">
     <div>Articul:</div>
-    BM: 45435345
-  </div><div class="price"><%= sprintf("%.2f", product.price) %> hrn.</div>
+    BM:45435
+  </div><div class="price">
+    <span class="integer_part"><%= product.price.truncate %></span>
+    <span class="decimal_part"><%= decimal_part(product.price) %></span>
+    <span class="currency">hrn.</span>
+  </div>
   <div class="add_to_cart">
     <span>Add</span>
     <%= text_field_tag :count, 1 %>
