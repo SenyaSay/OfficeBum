@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120904163831) do
+ActiveRecord::Schema.define(:version => 20130217130147) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -74,13 +74,15 @@ ActiveRecord::Schema.define(:version => 20120904163831) do
   add_index "product_characteristics", ["product_id", "characteristic_id"], :name => "index_product_characteristics_on_foreign_keys", :unique => true
 
   create_table "products", :force => true do |t|
-    t.string   "name",                                      :null => false
+    t.string   "name",                                                    :null => false
     t.text     "description"
-    t.decimal  "price",       :precision => 8, :scale => 2
+    t.decimal  "price",                     :precision => 8, :scale => 2
     t.string   "image"
-    t.datetime "created_at",                                :null => false
-    t.datetime "updated_at",                                :null => false
+    t.datetime "created_at",                                              :null => false
+    t.datetime "updated_at",                                              :null => false
     t.integer  "category_id"
+    t.string   "brand",       :limit => 64
+    t.string   "code",        :limit => 32
   end
 
   create_table "users", :force => true do |t|
