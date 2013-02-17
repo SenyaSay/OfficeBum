@@ -11,7 +11,7 @@
   <div class="add_to_cart">
     <span>Add</span>
     <%= text_field_tag :count, 1 %>
-    <%= select_tag :box %>
+    <%= select :box, :asd, [["шт",1],["box", 2]] %>
     <%= link_to image_tag("/assets/cart.png"), cart_path(:id => product.id), :method => :put, :remote => true %>
   </div>
 </div>
