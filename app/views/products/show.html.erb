@@ -26,12 +26,14 @@
       <th> <%= t('.name') %> </th>
       <th> <%= t('.value') %> </th>
     </tr>
-  <% @characteristics.each do |characteristic|%>
     <tr>
-     <td><%= characteristic.name %></td>
-     <td><%= @product.characteristic_value(characteristic) %></td>
+     <td><%= 'Brand' %></td>
+     <td><%= @product.brand %></td>
     </tr>
-  <% end %>
+    <tr>
+      <td><%= 'Code' %></td>
+      <td><%= @product.code %></td>
+    </tr>
   </table>
 </div>
 

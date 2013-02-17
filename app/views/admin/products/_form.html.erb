@@ -22,17 +22,14 @@
         <%= f.file_field :image, :class => 'file_field' %>
         <%= image_tag (@product.image_url(:thumb) || '/assets/cart.png'), :name => "preview", :id => "preview", :size => "50x50" %>
       </div>
-    </div>
-
-    <div class="control-group">
-      <%= f.fields_for :product_characteristics do |pc| %>
-          <% @characteristics.each do |characteristic|%>
-              <%= pc.label characteristic.name, :class => 'control-label' %>
-              <div class="controls">
-                <%= pc.text_field(characteristic.id, :value => @product.characteristic_value(characteristic))%>
-              </div>
-          <% end %>
-      <% end %>
+      <%= f.label :brand, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :brand, :class => 'text_field' %>
+      </div>
+      <%= f.label :code, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :code, :class => 'text_field' %>
+      </div>
     </div>
 
     <div class="product_button">

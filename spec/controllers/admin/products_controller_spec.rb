@@ -39,11 +39,6 @@ describe Admin::ProductsController do
       get :new
       assigns[:product].should_not be_nil
     end
-
-    it "should set @characteristics" do
-      get :new
-      assigns[:characteristics].should_not be_nil
-    end
   end
 
   describe :create do
@@ -55,11 +50,6 @@ describe Admin::ProductsController do
 
       it "should create new product" do
         expect { post :create, :product => {:name => "3r3"} }.to change { Product.count }.by(1)
-      end
-
-      it "should receive characteristics" do
-        Product.any_instance.should_receive(:update_characteristics).with("name" => "name")
-        post :create, :product => { :name => "12", :product_characteristics => {:name => "name"} }
       end
     end
 
@@ -111,15 +101,10 @@ describe Admin::ProductsController do
   
   describe :update do
    let(:product1){ create :product, :name => "qqq" } 
-   let(:characteristic1){ create :characteristic }
    it "should update attributes" do
      put :update, :id => product1.id, :product => { :name => "eww" }
      product1.reload
      product1.name.should eq("eww")
-   end
-
-   it "should increase" do
-     expect { put :update, :id => product1.id, :product => { :product_characteristics => { characteristic1.id => "rot"} } }.to change{ product1.characteristics.count }.by(1)
    end
   end
  

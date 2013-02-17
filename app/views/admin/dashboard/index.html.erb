@@ -3,7 +3,6 @@
   <h3><%= t("titles.#{controller.controller_name}.#{controller.action_name}") %></h3>
 </div>
 <%= link_to(t('menu.admin.products'), admin_products_path) %> <br />
-<%= link_to(t('menu.admin.characteristics'), admin_characteristics_path) %> <br />
 <%= link_to(t('menu.admin.orders'), admin_orders_path) %> <br />
 <%= link_to(t('menu.admin.categories'), admin_categories_path) %> <br />
 <%= link_to(t('auth.logout'), destroy_admin_session_path, :method => :delete) %>

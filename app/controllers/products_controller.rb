@@ -3,7 +3,6 @@ class ProductsController < ApplicationController
 
   before_filter :build_menu, :only => :index
   before_filter :find_product, :only => :show
-  before_filter :find_characteristics, :only => :show
   before_filter :build_cart_cookies
   before_filter :build_cart
 
@@ -25,10 +24,6 @@ class ProductsController < ApplicationController
 
   def find_product
     @product = Product.find(params[:id])
-  end
-
-  def find_characteristics
-    @characteristics = @product.characteristics
   end
 
   def build_cart
