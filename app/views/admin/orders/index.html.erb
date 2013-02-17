@@ -18,7 +18,7 @@
 <% @orders.each do |order| %>
   <tr>
     <td> <%= order.user.try(:email) %> </td>
-    <td> <%= products(order.order_products) %> </td>
+    <td> <%= raw products(order.order_products) %> </td>
     <td> <%= order.total_price %> </td>
     <td> <%= select :status, nil, Order::STATUS, { selected: order.status }, { id: order.id, :class => 'select' } %> </td>
     <td> <%= order.description %> </td>

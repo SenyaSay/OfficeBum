@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   before_filter :load_cookies, :build_cart
 
   def index
-    @orders = Order.where(:user_id => current_user.id).includes(:user, :order_products => :product).page(params[:page]).per(20)
+    @orders = current_user.orders.includes(order_products: :product).page(params[:page]).per(20)
   end
 
   def new
