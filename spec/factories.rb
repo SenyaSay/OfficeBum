@@ -1,4 +1,5 @@
 FactoryGirl.define do
+  I18n.locale = :en
   factory :product do
     name "product"
     category
@@ -13,5 +14,15 @@ FactoryGirl.define do
 
   factory :category do
     name "paper"
+  end
+
+  factory :user do
+    email "user@gmail.com"
+    password "userpass"
+  end
+
+  factory :order do
+    user
+    status "reserved"
   end
 end
