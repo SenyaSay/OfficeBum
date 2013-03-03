@@ -125,3 +125,12 @@ ru:
   orders:
     new:
       user: "Пользователь"
+
+  status:
+    reserved: "Новый заказ"
+    in_process: "Обрабатывается"
+    accepted: "Принят к исполнению"
+    delivered: "Доставлен, но не оплачен"
+    paid: "Оплачен, но не доставлен"
+    completed: "Завершен"
+    cancelled: "Отменен"

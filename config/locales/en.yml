@@ -2,4 +2,11 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  status:
+    reserved: "New order"
+    in_process: "In process"
+    accepted: "Accepted"
+    delivered: "Delivered without paid"
+    paid: "Paid without delivered"
+    completed: "Completed"
+    cancelled: "Cancelled"
