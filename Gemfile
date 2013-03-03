@@ -11,7 +11,8 @@ gem 'rmagick', '2.13.1'
 gem 'devise', '2.1.0'
 gem 'kaminari', '0.13.0'
 gem 'enum_column3', '0.1.4'
-gem 'awesome_nested_set'
+gem 'awesome_nested_set', '2.1.4'
+gem 'state_machine', '1.1.2'
 
 group :development do
   gem 'parallel_tests', '0.8.2'
