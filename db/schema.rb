@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130217140959) do
+ActiveRecord::Schema.define(:version => 20130303114146) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -50,9 +50,9 @@ ActiveRecord::Schema.define(:version => 20130217140959) do
 
   create_table "orders", :force => true do |t|
     t.integer  "user_id"
-    t.enum     "status",      :limit => [:reserved, :cancelled, :purchased, :deleted], :null => false
-    t.datetime "created_at",                                                           :null => false
-    t.datetime "updated_at",                                                           :null => false
+    t.enum     "status",      :limit => [:reserved, :cancelled, :in_process, :accepted, :delivered, :paid, :completed], :null => false
+    t.datetime "created_at",                                                                                            :null => false
+    t.datetime "updated_at",                                                                                            :null => false
     t.text     "description"
   end
 
