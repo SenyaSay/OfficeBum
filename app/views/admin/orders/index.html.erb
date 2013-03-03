@@ -20,7 +20,7 @@
     <td> <%= order.user.try(:email) %> </td>
     <td> <%= raw products(order.order_products) %> </td>
     <td> <%= order.total_price %> </td>
-    <td> <%= select :status, nil, Order::STATUS, { selected: order.status }, { id: order.id, :class => 'select' } %> </td>
+    <td> <%= select_status(order) %> </td>
     <td> <%= order.description %> </td>
     <td> <%= link_to t('button.delete'), admin_order_path(order), :method => :delete, :class => 'btn btn-mini btn-danger' %> </td>
   </tr>

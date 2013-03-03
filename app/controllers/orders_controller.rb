@@ -35,7 +35,7 @@ class OrdersController < ApplicationController
   end
 
   def order_attrs
-    params[:order].merge(user: current_user, status: Order::STATUS[0])
+    params[:order].merge(user: current_user)
   end
 
 end

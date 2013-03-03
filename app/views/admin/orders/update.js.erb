@@ -1,0 +1,5 @@
+<% if @result %>
+    $("#<%= @order.id%>").replaceWith('<%= escape_javascript(select_status(@order)) %>');
+<% else %>
+    alert('Status cannot be changed');
+<% end %>

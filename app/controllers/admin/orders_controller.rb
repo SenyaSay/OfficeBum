@@ -6,8 +6,7 @@ class Admin::OrdersController < Admin::BaseController
   end
 
   def update
-    text = @order.update_attributes(status: params[:status]) ? 'OK' : 'Error'
-    render text: text
+    @result = @order.update_status(params[:status])
   end
 
   def destroy
