@@ -18,7 +18,7 @@ module ProductsHelper
 
   def image_block(product)
     content_tag :div do
-      image_tag(product.image? ? product.image_url(:thumb) : 'rails.png', class: "photo") +
+      image_tag(product.image? ? product.image_url(:thumb) : 'no_image.jpg', class: "photo") +
       content_tag(:div, product.name, class: :product_name)
     end
   end
