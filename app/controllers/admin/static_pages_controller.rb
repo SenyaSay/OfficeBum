@@ -25,7 +25,7 @@ class Admin::StaticPagesController < Admin::BaseController
   end
 
   def update
-    if @page.update_attributes(params[:page])
+    if @page.update_attributes(params[:static_page])
       flash[:notice] = 'Category was successfully updated.'
       redirect_to admin_static_page_path(@page)
     else
