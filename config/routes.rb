@@ -55,6 +55,7 @@ OfficeBum::Application.routes.draw do
     resources :products
     resources :orders, :only => [:index, :update, :destroy]
     resources :categories
+    resources :static_pages
   end
 
   # You can have the root of your site routed with "root"

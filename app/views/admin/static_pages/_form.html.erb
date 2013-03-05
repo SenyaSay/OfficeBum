@@ -1,0 +1,27 @@
+<%= form_for @page, :url => { :action => action }, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= flash[:error] %>
+
+<div class="control-group">
+  <%= f.label :title, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :title, :class => 'text_field' %>
+  </div>
+  <%= f.label :caption, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :caption, :class => 'text_field' %>
+  </div>
+  <%= f.label :description, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_area :description, :class => 'text_area' %>
+  </div>
+  <%= f.label :visible, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.check_box :visible, :class => 'checkbox' %>
+  </div>
+</div>
+<div class="static_page_button">
+  <%= f.submit t('button.create'), :class => 'btn btn-primary' %>
+  <%= link_to t('button.back'), admin_static_pages_path, :class => 'btn' %>
+</div>
+<% end %>
+

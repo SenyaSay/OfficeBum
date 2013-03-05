@@ -1,0 +1,25 @@
+<%- model_class = StaticPage -%>
+<div class="page-header">
+  <h3><%= t("titles.#{controller.controller_name}.#{controller.action_name}") %></h3>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= t('.title') %>:</strong></dt>
+  <dd><%= @page.title %></dd>
+  <dt><strong><%= t('.caption') %>:</strong></dt>
+  <dd><%= @page.caption %></dd>
+  <dt><strong><%= t('.description') %>:</strong></dt>
+  <dd><%= @page.description %></dd>
+  <dt><strong><%= t('.visible') %>:</strong></dt>
+  <dd><%= @page.visible %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('button.back'), admin_static_pages_path, :class => 'btn'  %>
+  <%= link_to t('button.edit'), edit_admin_static_page_path(@page), :class => 'btn' %>
+  <%= link_to t('button.delete'),
+              admin_static_page_path(@page),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

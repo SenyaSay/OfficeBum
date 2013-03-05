@@ -1,0 +1,31 @@
+<%- model_class = StaticPage -%>
+<div class="page-header">
+  <h3><%= t("titles.#{controller.controller_name}.#{controller.action_name}") %></h3>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= t('.title') %></th>
+      <th><%= t('.caption') %></th>
+      <th><%= t('.description') %></th>
+      <th><%= t('.visible') %></th>
+    </tr>
+  </thead>
+  <tbody>
+<% @pages.each do |page| %>
+  <tr>
+    <td> <%= page.title %> </td>
+    <td> <%= page.caption %> </td>
+    <td> <%= page.description %> </td>
+    <td> <%= page.visible %> </td>
+    <td><%= link_to t('button.show'), admin_static_page_path(page), :class => 'btn btn-mini' %></td>
+    <td><%= link_to t('button.edit'), edit_admin_static_page_path(page), :class => 'btn btn-mini' %></td>
+    <td><%= link_to t('button.delete'), admin_static_page_path(page), :method => :delete, :class => 'btn btn-mini btn-danger' %></td>
+  </tr>
+<% end %>
+  </tbody>
+</table>
+<%= link_to t('button.add'), new_admin_static_page_path, :class => 'btn btn-primary' %>
+<%= link_to t('button.back_to_admin_panel'), admin_root_path, :class => 'btn' %>
+

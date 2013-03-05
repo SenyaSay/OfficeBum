@@ -31,6 +31,11 @@ ru:
         image: "Изображение"
       order:
         description: "Информация покупателя"
+      static_page:
+        title: "Заголовок"
+        caption: "Название вкладки"
+        description: "Текст страницы"
+        visible: "Показывать"
 
   menu:
     admin:
@@ -39,6 +44,7 @@ ru:
       characteristics: "Характеристики продуктов"
       orders: "Заказы"
       categories: "Категории продуктов"
+      static_pages: "Управление страницами"
 
   auth:
     logout: "Выход"
@@ -65,6 +71,11 @@ ru:
     orders:
       index: "Заказы"
       new: "Заказ"
+    static_pages:
+      index: "Все страницы"
+      edit: "Править страницу"
+      new: "Добавить страницу"
+      show: "Показать страницу"
 
   button:
     create: "Подтвердить"
@@ -111,6 +122,17 @@ ru:
         price: "Цена"
         description: "Описание"
         image: "Изображение"
+    static_pages:
+      index:
+        title: "Заголовок"
+        caption: "Название вкладки"
+        description: "Текст страницы"
+        visible: "Показывать"
+      show:
+        title: "Заголовок"
+        caption: "Название вкладки"
+        description: "Текст страницы"
+        visible: "Показывать"
   products:
     index:
       price: "Цена"
