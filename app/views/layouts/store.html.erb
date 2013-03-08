@@ -10,22 +10,7 @@
 <div id="wrapper">
   <header>
     <%= image_tag "banner.png" %>
-    <menu>
-      <li>
-        <%= link_to "Catalog", "#" %>
-      </li><li class="current">
-        <%= link_to "Missiya", "#" %>
-      </li><li>
-        <%= link_to "Oplata", "#" %>
-      </li><li>
-        <%= link_to "Dostavka", "#" %>
-      </li><li>
-        <%= link_to "Contacts", "#" %>
-      </li><li>
-        <%= link_to "Chto to", "#" %>
-      </li>
-    </menu>
-
+    <%= raw tabs(@pages) %>
     <%= link_to "One click order", "#" %>
   </header>
 
@@ -51,7 +36,9 @@
       </section>
       <section class="window" id="main_product">
         <h3>Main product</h3>
-        <%= render "products/product", product: Product.first %>
+        <% if Product.first %>
+          <%= render "products/product", product: Product.first %>
+        <% end %>
       </section>
       <section class="window" id="contacts">
         <h3>Contacts</h3>
@@ -71,7 +58,7 @@
     </div>
   </div>
 
-  <%= render 'cart' %>
+  <%= render 'products/cart' %>
 </div>
 
 <footer> Footer:</footer>

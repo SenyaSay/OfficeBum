@@ -1,10 +1,11 @@
 class ProductsController < ApplicationController
   layout 'store'
 
-  before_filter :build_menu, :only => :index
+  before_filter :build_menu
   before_filter :find_product, :only => :show
   before_filter :build_cart_cookies
   before_filter :build_cart
+  before_filter :pages
 
   def index
     category = Category.find_by_id(params[:category])
@@ -17,6 +18,10 @@ class ProductsController < ApplicationController
   end
 
   private
+
+  def pages
+    @pages = StaticPage.visible
+  end
 
   def build_menu
     @menu = Menu.new(params[:category]).build

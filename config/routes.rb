@@ -64,6 +64,7 @@ OfficeBum::Application.routes.draw do
   resources :products, :only => [:index, :show]
   resource :cart, :only => [:update, :destroy]
   resources :orders, :only => [:create, :new, :index]
+  resources :static_pages, :only => :show
 
   # See how all your routes lay out with "rake routes"
 
