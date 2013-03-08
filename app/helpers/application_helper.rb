@@ -11,7 +11,7 @@ module ApplicationHelper
   private
 
   def tab_class(link)
-    if link.match(request.fullpath)
+    if products_link_and_current?(link) || static_link_and_current?(link)
       "current"
     end
   end
@@ -20,5 +20,13 @@ module ApplicationHelper
     content_tag :li, class: tab_class(path) do
       link_to caption, path
     end
+  end
+
+  def products_link_and_current?(link)
+    [root_path, products_path].include?(request.fullpath) && link == products_path
+  end
+
+  def static_link_and_current?(link)
+    ![root_path, products_path].include?(request.fullpath) && link.match(request.fullpath)
   end
 end
