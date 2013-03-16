@@ -1,6 +1,6 @@
 #cart {
     position: absolute;
-    bottom: 0;
+    bottom: 60px;
     right:20px;
     background-color: #B5E3FF;
     padding: 10px;
