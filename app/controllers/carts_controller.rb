@@ -24,8 +24,9 @@ class CartsController < ApplicationController
 
   def add_product
     id = params[:id]
+    quantity = params[:count].to_i
     return unless id
-    @cart_cookies.merge!(id =>  @cart_cookies[id] ? @cart_cookies[id].next : 1)
+    @cart_cookies.merge!(id => quantity)
   end
 end
 

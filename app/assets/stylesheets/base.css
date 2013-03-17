@@ -122,7 +122,7 @@ header menu li.current a {
 }
 .window > ul,
 .window > div {
-    margin: 3px 0px 0;
+    margin: 3px 0 0;
 }
 
 .window h3 {

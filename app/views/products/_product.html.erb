@@ -9,9 +9,12 @@
     <span class="currency">hrn.</span>
   </div>
   <div class="add_to_cart">
-    <span>Add</span>
-    <%= text_field_tag :count, 1 %>
-    <%= select :box, :asd, [["шт",1],["box", 2]] %>
-    <%= link_to image_tag("/assets/cart.png"), cart_path(:id => product.id), :method => :put, :remote => true %>
+    <%= form_tag(cart_path, method: :put, remote: true) do %>
+      <span>Add</span>
+      <%= text_field_tag :count, 1 %>
+      <%= hidden_field_tag :id, product.id %>
+      <span>шт</span>
+      <%= image_submit_tag("/assets/cart.png", class: "image_button") %>
+    <% end %>
   </div>
 </div>
