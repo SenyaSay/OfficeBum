@@ -196,13 +196,14 @@ color-stop(0%,#0000ff), color-stop(100%,#fff));
 }
 
 #sign_in label {
-    width: 60px;
+    margin: 2px;
     display: inline-block;
 }
 
 #sign_in input[type="text"],
 #sign_in input[type="password"]{
-    width: 110px;
+    margin: 0 2px;
+    width: 176px;
 }
 
 .sign_in_button {

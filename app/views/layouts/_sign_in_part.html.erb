@@ -4,8 +4,8 @@
       (<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>)
   <% else %>
       <%= form_for("user", :url => user_session_path) do |f| %>
-          <%= f.label :email %><%= f.text_field :email, :placeholder => 'Email' %>
-          <%= f.label :password %><%= f.password_field :password, :placeholder => 'Password' %>
+          <%= f.text_field :email, :placeholder => 'Email' %>
+          <%= f.password_field :password, :placeholder => 'Password' %>
           <%= f.label :remember_me %><%= f.check_box :remember_me %>
           <div class="sign_in_button">
             <%= f.submit 'Sign in' %>
