@@ -2,20 +2,20 @@
 
 <table class="orders">
   <tr> 
-    <th> <%= :user %> </th>
-    <th> <%= t('.products') %> </th>
-    <th> <%= t('.total_price') %> </th>
-    <th> <%= t('.status') %> </th>
-    <th> <%= t('.description') %> </th>
+    <th><%= :user %></th>
+    <th><%= t('.products') %></th>
+    <th><%= t('.total_price') %></th>
+    <th><%= t('.status') %></th>
+    <th><%= t('.description') %></th>
     <th></th>
   </tr>
 <% @orders.each do |order| %>
   <tr>
-    <td> <%= current_user.email %> </td>
-    <td> <%= raw products(order.order_products) %> </td>
-    <td> <%= order.total_price %> </td>
-    <td> <%= order.status %> </td>
-    <td> <%= order.description %> </td>
+    <td><%= current_user.email %></td>
+    <td><%= raw products(order.order_products) %></td>
+    <td><%= order.total_price %></td>
+    <td><%= order.status %></td>
+    <td><%= order.description %></td>
   </tr>
 <% end %>
 </table>
