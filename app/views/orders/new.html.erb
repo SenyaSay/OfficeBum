@@ -1,7 +1,9 @@
 <h3> <%= t("titles.#{controller.controller_name}.#{controller.action_name}") %> </h3>
 
 <%= t('.user') %>: <%= current_user.try(:email) %> <br />
-<%= render "/products/cart_data" %>
+<div id="cart_data">
+  <%= render "cart_products/cart_product" %>
+</div>
 
 <%= form_for @order, :url => { :action => "create" } do |f| %>
 <span class="error"><%= @order.errors.full_messages.join(" and ") %></span>

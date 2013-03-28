@@ -1,0 +1,15 @@
+<table>
+  <% @cart.products.each do |product, quantity| %>
+      <tr>
+        <td class="name"><%= product.name %>:</td>
+        <td class="quantity"><%= quantity %> x</td>
+        <td class="price" ><%= product.price %></td>
+        <td><%= link_to image_tag("edit.jpg", size: "12x12") %></td>
+        <td><%= link_to image_tag("delete.jpg", size: "12x12"), cart_products_path(id: product.id), method: "delete", remote: true %></td>
+      </tr>
+  <% end %>
+  <tr class="total_line" >
+    <td colspan="2" ><%= t('.total') %></td>
+    <td class="price"><%= @cart.total_price %></td>
+  </tr>
+</table>
