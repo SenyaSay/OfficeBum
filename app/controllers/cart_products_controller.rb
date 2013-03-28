@@ -1,6 +1,5 @@
 class CartProductsController < ApplicationController
   before_filter :build_cart_cookies
-  before_filter :build_cart
 
   def update
     id = params[:id]
@@ -17,10 +16,6 @@ class CartProductsController < ApplicationController
   end
 
   private
-
-  def build_cart
-    @cart = Cart.new(@cart_cookies)
-  end
 
   def update_cookie
     @cart = Cart.new(@cart_cookies)

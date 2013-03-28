@@ -1,11 +1,11 @@
 <table>
   <% @cart.products.each do |product, quantity| %>
-      <tr>
+      <tr class="order_product_line" id="<%= product.id %>">
         <td class="name"><%= product.name %>:</td>
-        <td class="quantity"><%= quantity %> x</td>
+        <td class="quantity"><span><%= quantity %></span> x</td>
         <td class="price" ><%= product.price %></td>
-        <td><%= link_to image_tag("edit.jpg", size: "12x12") %></td>
-        <td><%= link_to image_tag("delete.jpg", size: "12x12"), cart_products_path(id: product.id), method: "delete", remote: true %></td>
+        <td><div class="edit_order_product"><%= image_tag("edit.jpg") %></div></td>
+        <td><%= link_to image_tag("delete.jpg"), cart_products_path(id: product.id), method: "delete", remote: true %></td>
       </tr>
   <% end %>
   <tr class="total_line" >
