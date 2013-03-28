@@ -147,6 +147,9 @@ ru:
   orders:
     new:
       user: "Пользователь"
+  cart_products:
+    cart_product:
+      total: "Общая цена"
 
   status:
     reserved: "Новый заказ"
