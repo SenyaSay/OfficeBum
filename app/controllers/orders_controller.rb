@@ -1,5 +1,4 @@
-class OrdersController < ApplicationController
-  before_filter :load_cookies, :build_cart
+class OrdersController < StoreController
 
   def index
     @orders = current_user.orders.includes(order_products: :product).page(params[:page]).per(20)
@@ -24,14 +23,6 @@ class OrdersController < ApplicationController
 
   def clear_cart
     cookies.delete :cart
-  end
-
-  def build_cart
-    @cart = Cart.new(@cart_cookies)
-  end
-
-  def load_cookies
-    @cart_cookies = cookies[:cart] ? Marshal.load(cookies[:cart]) : {}
   end
 
   def order_attrs
