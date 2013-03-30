@@ -3,4 +3,5 @@
  *= require base
  *= require cart
  *= require product
+ *= require order
 */

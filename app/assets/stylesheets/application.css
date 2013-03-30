@@ -2,18 +2,4 @@
  *= require_self
 */
 
-td.quantity {
-    width: 80px;
-    text-align: right;
-}
-
-td.quantity input {
-    width: 35px;
-    margin: 1px;
-}
-
-td img {
-    height: 12px;
-    width: 12px;
-}
 
