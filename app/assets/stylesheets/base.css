@@ -123,6 +123,7 @@ header menu li.current a {
 .window > ul,
 .window > div {
     margin: 3px 0 0;
+    padding: 1px;
 }
 
 .window h3 {
@@ -203,7 +204,7 @@ color-stop(0%,#0000ff), color-stop(100%,#fff));
 #sign_in input[type="text"],
 #sign_in input[type="password"]{
     margin: 0 2px;
-    width: 176px;
+    width: 175px;
 }
 
 .sign_in_button {
