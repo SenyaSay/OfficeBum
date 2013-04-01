@@ -1,5 +1,5 @@
 <h3> <%= t("titles.#{controller.controller_name}.#{controller.action_name}") %> </h3>
-
+<div id="order_new">
 <%= t('.user') %>: <%= current_user.try(:email) %> <br />
 <div id="cart_data">
   <%= render "cart_products/cart_product" %>
@@ -17,3 +17,4 @@
 <% end %>
 
 <%= link_to(t('button.back'), root_url) %>
+</div>

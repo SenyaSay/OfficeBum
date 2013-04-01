@@ -147,6 +147,10 @@ color-stop(0%,#0000ff), color-stop(100%,#fff));
     margin-left: 259px;
 }
 
+.content #order_new {
+    margin: 5px;
+}
+
 /* Left side */
 
 .left {
