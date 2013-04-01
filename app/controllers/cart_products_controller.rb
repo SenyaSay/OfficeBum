@@ -1,4 +1,4 @@
-class CartProductsController < ApplicationController
+class CartProductsController < StoreController
   before_filter :build_cart_cookies
 
   def update
