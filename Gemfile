@@ -18,7 +18,7 @@ group :development do
   gem 'parallel_tests', '0.8.2'
   gem 'quiet_assets'
   gem "capistrano"
-  gem "rvm-capistrano"
+  gem 'capistrano-rbenv'
 end
 
 group :test do
